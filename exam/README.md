@@ -2,3 +2,4 @@
 
 - Culminating exam
 - Suggest 1 hour 50 minutes
+- 6 questions
