@@ -122,6 +122,9 @@ Each module includes specific learning objectives with:
 - [Java Collections Framework](https://docs.oracle.com/javase/tutorial/collections/)
 - [Object-Oriented Programming Concepts](https://docs.oracle.com/javase/tutorial/java/concepts/)
 - [JUnit Testing Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [Codecademy Java Cheatsheet](https://www.codecademy.com/learn/learn-java/modules/learn-java-hello-world/cheatsheet) - Quick reference for Java syntax and fundamentals
+- [Java Tutorial](https://cse12x.github.io/java-tutorial/) - A guide to learning Java using other languages as examples
+- [Learn Java in Y Minutes](https://learnxinyminutes.com/docs/java/) - Quick overview of Java syntax and features
 
 ### Community and Support
 - [Stack Overflow Java Tag](https://stackoverflow.com/questions/tagged/java)
