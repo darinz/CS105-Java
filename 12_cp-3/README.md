@@ -1,4 +1,4 @@
-# Creative Projects
+# Checkpoint Projects
 
 - x4
 - More open-ended assignments
