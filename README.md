@@ -92,11 +92,6 @@ The curriculum is organized around 17 specific learning objectives across seven 
 - **Build Tool:** Maven (for advanced projects)
 - **Testing Framework:** JUnit 5
 
-### Phase 5: Best Practices
-- Code documentation and style
-- Unit testing and test-driven development
-- Performance analysis and optimization
-
 ## Assessment and Evaluation
 
 ### Learning Objectives
