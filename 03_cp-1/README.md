@@ -1,4 +1,4 @@
-# Checkpoint Projects
+# Mini Checkpoint Project
 
 - More open-ended assignments
 - Explore new ideas and applications
