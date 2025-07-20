@@ -94,60 +94,91 @@ The curriculum is organized around 17 specific learning objectives across seven 
 
 ## Learning Path
 
-1. Software Setup
+### 1. [Software Setup](01_software-setup/)
+- Environment configuration and development tools setup
 
-2. Review, Functional Decomposition, Design
-- Introduction
-- Java Review
-- Functional Decomposition
+### 2. [Introduction and Review](02_intro/)
+- Course overview and Java fundamentals review
+- Functional decomposition principles
+- Code quality standards
 
-3. File Input/Output
+### 3. [Checkpoint 1](03_cp-1/)
+- Practice problems and review concepts
+- Functional decomposition, file I/O, and ArrayLists
 
-4. ArrayLists
-- ArrayLists
-- ArrayList Applications
+### 4. [File Input/Output](04_file-io/)
+- Console and file I/O operations
+- Data persistence and retrieval
 
-5. Practice problems and review concepts 1
-- Functional Decomposition, 
-- File I/O
-- ArrayLists
+### 5. [Programming Assignment 1](05_pa-1/)
+- Comprehensive project applying file I/O concepts
 
-6. Reference Semantics, Stacks/Queues
-- Stacks & Queues
-- Stacks & Queues Applications
+### 6. [ArrayLists](06_arraylists/)
+- Dynamic array implementation and applications
+- ArrayList operations and algorithms
 
-7. Sets and Maps 
-- Sets; for-each Loop; iterators
-- Maps
+### 7. [Quiz 1](07_quiz-1/)
+- Assessment covering foundational concepts
 
-8. Nested Collections and Objects 
-- Nested Collections
-- Introduction to Objects
+### 8. [Checkpoint 2](08_cp-2/)
+- Practice problems and review concepts
+- Reference semantics, stacks, and queues
 
-9. Practice problems and review concepts 2
-- Reference Semantics
-- Stacks and Queues
-- Sets
-- Maps
+### 9. [Reference Semantics, Stacks & Queues](09_semantics-stacks-queues/)
+- Reference semantics and memory management
+- Stack and queue data structures
+- Applications and implementations
 
-10. Object Oriented Programming
-- Encapsulation and Instance Methods
-- Advanced Object-Oriented Programming (OOP)
+### 10. [Programming Assignment 2](10_pa-2/)
+- Project incorporating stacks, queues, and reference semantics
 
-11. Interfaces and Beyond
-- Interfaces
-- Java Collections
+### 11. [Sets and Maps](11_sets-maps/)
+- Set data structures and for-each loops
+- Map implementations and applications
+- Iterators and collection traversal
 
-12. practice problems and review concepts 3
-- Nested Collections
-- Objects
-- Interfaces
+### 12. [Checkpoint 3](12_cp-3/)
+- Practice problems and review concepts
+- Sets, maps, and nested collections
 
-13. Testing and Libraries
-- JUnit
-- Third Party Libraries
+### 13. [Collections and Objects](13_collections-objects/)
+- Nested collections and complex data structures
+- Introduction to object-oriented programming
+- Class design and encapsulation
 
-14. Exam
+### 14. [Programming Assignment 3](14_pa-3/)
+- Project focusing on collections and object design
+
+### 15. [Quiz 2](15_quiz-2/)
+- Assessment covering intermediate concepts
+
+### 16. [Object-Oriented Programming](16_oop/)
+- Encapsulation and instance methods
+- Advanced OOP principles
+- Class relationships and inheritance
+
+### 17. [Checkpoint 4](17_cp-4/)
+- Practice problems and review concepts
+- Nested collections, objects, and interfaces
+
+### 18. [Interfaces and Beyond](18_interfaces-beyond/)
+- Interface design and implementation
+- Java Collections Framework
+- Advanced programming abstractions
+
+### 19. [Programming Assignment 4](19_pa-4/)
+- Final comprehensive project
+
+### 20. [Quiz 3](20_quiz-3/)
+- Assessment covering advanced concepts
+
+### 21. [Testing and Libraries](21_testing-libraries/)
+- JUnit testing framework
+- Third-party libraries and tools
+- Testing strategies and best practices
+
+### 22. [Final Exam](22_exam/)
+- Comprehensive assessment of all course concepts
 
 ## Assessment and Evaluation
 
