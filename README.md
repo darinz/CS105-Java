@@ -1,5 +1,7 @@
 # CS105-Java: Programming Abstractions
 
+> **⚠️ This repository is currently under construction. Content is being developed and may be incomplete.**
+
 [![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://adoptium.net/)
 [![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)
 [![Course Level](https://img.shields.io/badge/Course%20Level-Intermediate-blue)](https://github.com/your-username/CS105-Java)
