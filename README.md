@@ -92,6 +92,25 @@ The curriculum is organized around 17 specific learning objectives across seven 
 - **Build Tool:** Maven (for advanced projects)
 - **Testing Framework:** JUnit 5
 
+## Learning Path
+
+1. Software Setup
+
+2. Review, Functional Decomposition, Design
+- Introduction
+- Java Review
+- Functional Decomposition
+
+3. File Input/Output
+
+4. ArrayLists
+- ArrayLists
+- ArrayList Applications
+
+5. Reference Semantics, Stacks/Queues
+- Stacks & Queues
+- Stacks & Queues Applications
+
 ## Assessment and Evaluation
 
 ### Learning Objectives
