@@ -513,4 +513,4 @@ If you find any issues or have suggestions for improving this setup guide, pleas
 ---
 
 
-*This setup guide is designed for CS105 students but can be used by anyone learning Java development.*
+*This setup guide is designed for this repo but can be used by anyone learning Java development.*
