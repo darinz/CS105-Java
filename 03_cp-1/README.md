@@ -221,4 +221,4 @@ Develop a quiz game with customizable questions and scoring:
 
 **Remember**: This is an opportunity to demonstrate your understanding of Java fundamentals and functional decomposition. Focus on writing clean, well-organized code that solves the problem effectively!
 
-**Good luck with your Mini Checkpoint Project!** 🚀
+**Good luck with your Mini Checkpoint Project!**
