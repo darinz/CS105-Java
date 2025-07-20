@@ -107,9 +107,45 @@ The curriculum is organized around 17 specific learning objectives across seven 
 - ArrayLists
 - ArrayList Applications
 
-5. Reference Semantics, Stacks/Queues
+5. Practice problems and review concepts 1
+- Functional Decomposition, 
+- File I/O
+- ArrayLists
+
+6. Reference Semantics, Stacks/Queues
 - Stacks & Queues
 - Stacks & Queues Applications
+
+7. Sets and Maps 
+- Sets; for-each Loop; iterators
+- Maps
+
+8. Nested Collections and Objects 
+- Nested Collections
+- Introduction to Objects
+
+9. Practice problems and review concepts 2
+- Reference Semantics
+- Stacks and Queues
+- Sets
+- Maps
+
+10. Object Oriented Programming
+- Encapsulation and Instance Methods
+- Advanced Object-Oriented Programming (OOP)
+
+11. Interfaces and Beyond
+- Interfaces
+- Java Collections
+
+12. practice problems and review concepts 3
+- Nested Collections
+- Objects
+- Interfaces
+
+13. Testing and Libraries
+- JUnit
+- Third Party Libraries
 
 ## Assessment and Evaluation
 
