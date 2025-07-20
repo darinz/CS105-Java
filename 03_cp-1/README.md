@@ -1,4 +1,4 @@
-# Creative Projects
+# Checkpoint Projects
 
 - More open-ended assignments
 - Explore new ideas and applications
