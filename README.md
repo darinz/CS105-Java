@@ -147,6 +147,8 @@ The curriculum is organized around 17 specific learning objectives across seven 
 - JUnit
 - Third Party Libraries
 
+14. Exam
+
 ## Assessment and Evaluation
 
 ### Learning Objectives
