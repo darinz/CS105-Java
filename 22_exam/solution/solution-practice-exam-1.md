@@ -327,3 +327,76 @@ public class RelayTeam implements Team {
     }
 }
 
+
+6. **Stacks/Queues Programming:** Write a method called alphabetize that takes a queue of Strings as a parameter and modifies the queue to sort the Strings based on their first letter. We will assume that all Strings in the queue begin with either a, b, or c. For example, suppose a variable called q stores the following sequence of values:
+
+    front ["august", "cornelia street", "bejeweled", "cardigan", "afterglow"] back
+
+and we make the following call:
+
+    alphabetize(q);
+
+Then q should store the following values after the call:
+
+    front ["august", "afterglow", "bejeweled", "cornelia street", "cardigan"] back
+
+Notice that the Strings that start with 'a' are at the front, followed by the Strings that start with 'b', followed by the Strings that start with 'c'. Also, notice that the queue is not fully alphabetized, rather, the ordering within a group is maintained. For example, "august" is before "afterglow" in both the original queue and the modified queue.
+
+If the input queue is empty, then calling this method should not modify it.
+
+For an E, your solution must obey the following restrictions. A solution that disobeys them may get an S, but it is not guaranteed.
+
+* You may use one stack as auxiliary storage. You may not use other structures (arrays, lists, etc.), but you can have as many simple variables as you like.
+* Use the Queue interface and Stack/LinkedList classes discussed in class.
+* Use stacks/queues in stack/queue-like ways only. Do not use index-based methods such as get, search, or set, or for-each loops or iterators. You may call add, remove, push, pop, peek, isEmpty, and size.
+* Do not use advanced material such as recursion to solve the problem.
+
+You have access to the following two methods and may call them as needed to help you solve the problem:
+
+```java
+public static void s2q(Stack<String> s, Queue<String> q) {
+    while (!s.isEmpty()) {
+        q.add(s.pop());
+    }
+}
+
+public static void q2s(Queue<String> q, Stack<String> s) {
+    while (!q.isEmpty()) {
+        s.push(q.remove());
+    }
+}
+```
+
+```java
+public static void alphabetize (Queue<String> q) {
+    Stack<String> s = new Stack<>();
+    // move strings that start w 'a' to stack
+    int size = q.size();
+    for (int i = 0; i < size; i++) {
+        String str = q.remove();
+        if (str.charAt(0) == 'a') {
+            s.push(str);
+        } else {
+            q.add(str);
+        }
+    }
+    // move strings that start w 'b' to stack
+    size = q.size();
+    for (int i = 0; i < size; i++) {
+        String str = q.remove();
+        if (str.charAt(0) == 'b') {
+            s.push(str);
+        } else {
+            q.add(str);
+        }
+    }
+    // move the rest to stack
+    q2s(q,s);
+
+    // reverse everything
+    s2q(s,q);
+    q2s(q,s);
+    s2q(s,q);
+}
+```
+
