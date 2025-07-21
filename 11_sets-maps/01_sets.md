@@ -58,13 +58,20 @@ In Java, a **Set** is a collection that cannot contain duplicate elements. It mo
 ## Java Code Examples
 
 ### Creating and Using a HashSet
+
+// What’s happening here?
+// This example shows how to create a HashSet of Strings, add elements, check for duplicates, remove elements, and print the set.
+
 ```java
 import java.util.HashSet;
 import java.util.Set;
 
 public class SetExample {
     public static void main(String[] args) {
+        // Create a new HashSet of Strings
         Set<String> greetings = new HashSet<>();
+        
+        // Add elements to the set
         greetings.add("hi");
         greetings.add("hola");
         greetings.add("hello");
@@ -72,67 +79,105 @@ public class SetExample {
         greetings.add("konnichiwa");
         greetings.add("hello"); // Duplicate, will not be added
 
-        System.out.println("Set: " + greetings); // Order is not guaranteed
+        // Print the set (order is not guaranteed)
+        System.out.println("Set: " + greetings);
+        // Check if the set contains a specific element
         System.out.println("Contains 'hello'? " + greetings.contains("hello"));
+        // Remove an element
         greetings.remove("hola");
         System.out.println("After removing 'hola': " + greetings);
+        // Print the size of the set
         System.out.println("Set size: " + greetings.size());
     }
 }
 ```
 
+**Key Points:**
+- `Set<String> greetings = new HashSet<>();` creates a set that only stores unique strings.
+- Adding a duplicate (like "hello") has no effect.
+- The order of elements is unpredictable in a HashSet.
+- `contains()` checks for membership, `remove()` deletes an element, and `size()` gives the number of elements.
+
+---
+
 ### Creating and Using a TreeSet
+
+// What’s happening here?
+// This example shows how to use a TreeSet to store integers in sorted order automatically.
+
 ```java
 import java.util.TreeSet;
 import java.util.Set;
 
 public class TreeSetExample {
     public static void main(String[] args) {
+        // Create a new TreeSet of Integers
         Set<Integer> numbers = new TreeSet<>();
+        
+        // Add elements to the set
         numbers.add(42);
         numbers.add(3);
         numbers.add(15);
         numbers.add(42); // Duplicate, will not be added
         numbers.add(-7);
 
-        System.out.println("Sorted Set: " + numbers); // Output will be sorted
+        // Print the set (elements will be sorted)
+        System.out.println("Sorted Set: " + numbers); // Output: [-7, 3, 15, 42]
     }
 }
 ```
 
+**Key Points:**
+- `TreeSet` automatically sorts elements (here, integers from smallest to largest).
+- Duplicates are ignored.
+- Useful when you need a sorted collection without duplicates.
+
+---
+
 ### Iterating Over a Set
+
+// What’s happening here?
+// This example shows two ways to loop through all elements in a set: using a for-each loop and using an iterator.
+
 ```java
 Set<String> set = new HashSet<>();
 set.add("apple");
 set.add("banana");
 set.add("cherry");
 
-// Using enhanced for-loop
+// Using enhanced for-loop (for-each)
 for (String fruit : set) {
-    System.out.println(fruit);
+    System.out.println(fruit); // Prints each fruit in the set
 }
 
 // Using an iterator
 import java.util.Iterator;
 Iterator<String> it = set.iterator();
 while (it.hasNext()) {
-    System.out.println(it.next());
+    System.out.println(it.next()); // Prints each fruit in the set
 }
 ```
 
+**Key Points:**
+- The enhanced for-loop is the simplest way to visit every element in a set.
+- An iterator gives more control (e.g., you can remove elements while iterating).
+- The order of iteration is not guaranteed for HashSet.
+
 ---
 
-## Common Pitfalls and Best Practices
+## Java Set Concepts Explained
 
-- **No Duplicates:** Adding a duplicate element to a set has no effect.
-- **No Indexing:** Sets do not support get(int index) or similar methods; use a List if you need indexed access.
-- **Order:**
-  - HashSet: No order guaranteed.
-  - TreeSet: Sorted order.
-  - If you need insertion order, use `LinkedHashSet`.
-- **Null Elements:** HashSet allows one null element; TreeSet does not allow nulls.
-- **Performance:** Prefer HashSet for fast lookups and when order does not matter. Use TreeSet when you need sorted elements.
-- **Custom Objects:** If you use custom objects in a set, make sure to override `equals()` and `hashCode()` methods for correct behavior.
+- **What is an interface?**
+  - An interface in Java is like a contract: it defines what methods a class must have, but not how they work. `Set` is an interface, so classes like `HashSet` and `TreeSet` must provide the actual code for the set operations.
+- **Why use a Set?**
+  - Use a set when you want to store a collection of unique items and don’t care about their order (or want them sorted, in the case of `TreeSet`).
+- **When to use HashSet vs. TreeSet?**
+  - Use `HashSet` for fast lookups and when order doesn’t matter.
+  - Use `TreeSet` when you need the elements to be sorted.
+- **What happens if you add a duplicate?**
+  - The set ignores it—no error, but the set doesn’t change.
+- **Can you get an element by index?**
+  - No! Sets don’t have indices. Use a `List` if you need to access elements by position.
 
 ---
 
