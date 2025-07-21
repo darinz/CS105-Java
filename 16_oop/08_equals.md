@@ -11,11 +11,12 @@ Every class in Java inherits a default `equals()` method from the `Object` class
 
 ```java
 public boolean equals(Object obj) {
-    return (this == obj);
+    return (this == obj); // Checks if both references point to the same object in memory
 }
 ```
-- This checks if both references point to the same object (reference equality).
-- Not useful if you want to compare the *contents* of two objects.
+**Explanation:**
+- `this == obj` checks if both variables refer to the exact same object (reference equality).
+- This does **not** compare the contents or values inside the objects.
 
 ## Overriding `equals()` for Value Equality
 If you want to compare objects based on their values (fields), you need to override `equals()` in your class.
@@ -25,9 +26,10 @@ Suppose we have a `Point` class:
 
 ```java
 public class Point {
-    private int x;
-    private int y;
+    private int x; // x-coordinate
+    private int y; // y-coordinate
 
+    // Constructor to initialize the point
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
@@ -36,48 +38,56 @@ public class Point {
     // Overriding equals() for value equality
     @Override
     public boolean equals(Object obj) {
-        // Check if the same reference
+        // Step 1: Check if both references are the same
         if (this == obj) return true;
-        // Check if obj is null or not the same class
+        // Step 2: Check if obj is null or not the same class
         if (obj == null || getClass() != obj.getClass()) return false;
-        // Cast and compare fields
+        // Step 3: Cast obj to Point and compare fields
         Point other = (Point) obj;
         return this.x == other.x && this.y == other.y;
     }
 }
 ```
-
-**Explanation:**
-- `this == obj`: Checks if both references are the same.
-- `obj == null || getClass() != obj.getClass()`: Ensures `obj` is not null and is the same class.
-- Casts `obj` to `Point` and compares the fields.
+**Step-by-step explanation:**
+- `if (this == obj) return true;`  
+  If both references point to the same object, they are equal.
+- `if (obj == null || getClass() != obj.getClass()) return false;`  
+  If `obj` is `null` or not a `Point`, they can't be equal.
+- `Point other = (Point) obj;`  
+  Safe to cast now, since we know it's a `Point`.
+- `return this.x == other.x && this.y == other.y;`  
+  Compare the actual data fields for equality.
 
 ### Using `instanceof` (Alternative)
-You can also use `instanceof` for more flexible type checking:
+You can also use `instanceof` for more flexible type checking (allows subclasses):
 
 ```java
 @Override
 public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (!(obj instanceof Point)) return false;
-    Point other = (Point) obj;
-    return this.x == other.x && this.y == other.y;
+    if (this == obj) return true; // Same reference
+    if (!(obj instanceof Point)) return false; // Not a Point
+    Point other = (Point) obj; // Safe cast
+    return this.x == other.x && this.y == other.y; // Compare fields
 }
 ```
+**Note:**
+- `instanceof` allows subclasses to be considered equal, which may or may not be what you want. Using `getClass()` is stricter.
 
 ## Common Pitfalls
 - **Forgetting to override `hashCode()`**: If you override `equals()`, you *must* also override `hashCode()`. Otherwise, your objects may not work correctly in hash-based collections like `HashSet` or `HashMap`.
 - **Not checking for null**: Always check if the parameter is `null` before casting.
-- **Using `==` for objects**: Use `equals()` for object value comparison, not `==`.
+- **Using `==` for objects**: Use `equals()` for object value comparison, not `==` (which checks reference equality).
 
 ## Example: hashCode() Implementation
 ```java
 @Override
 public int hashCode() {
+    // Generates a hash code based on x and y values
     return Objects.hash(x, y);
 }
 ```
-- Use `Objects.hash()` (Java 7+) for convenience and correctness.
+- `Objects.hash(x, y)` is a utility method (Java 7+) that combines the fields into a single hash code.
+- Ensures that equal objects have the same hash code, as required by the contract between `equals()` and `hashCode()`.
 
 ## Summary Table
 | Comparison Type      | Method         | Checks for           |
