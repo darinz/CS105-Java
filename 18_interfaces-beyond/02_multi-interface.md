@@ -14,33 +14,37 @@ Suppose we have two interfaces:
 ```java
 // Interface for shapes that have a perimeter and area
 public interface Shape {
-    double getPerimeter();
-    double getArea();
+    double getPerimeter(); // Method to calculate the perimeter of the shape
+    double getArea();      // Method to calculate the area of the shape
 }
 
 // Interface for shapes with parallel sides
 public interface Parallel {
-    int numParallelPairs();
+    int numParallelPairs(); // Method to return the number of pairs of parallel sides
 }
 ```
+*Explanation:*  
+- `Shape` is an interface that says any class implementing it must provide methods to get the perimeter and area.
+- `Parallel` is an interface for shapes that have parallel sides, requiring a method to count those pairs.
 
 Now, a class can implement both:
 
 ```java
 // Square implements both Shape and Parallel
 public class Square implements Shape, Parallel {
-    private double side;
+    private double side; // Field to store the length of a side
 
+    // Constructor to set the side length when creating a Square
     public Square(double side) {
         this.side = side;
     }
 
     // Implement methods from Shape
     public double getPerimeter() {
-        return 4 * side;
+        return 4 * side; // Perimeter of a square = 4 * side
     }
     public double getArea() {
-        return side * side;
+        return side * side; // Area of a square = side^2
     }
 
     // Implement method from Parallel
@@ -49,9 +53,11 @@ public class Square implements Shape, Parallel {
     }
 }
 ```
-
-**Explanation:**  
-- `Square` must provide all methods from both `Shape` and `Parallel`.
+*Explanation:*  
+- The `Square` class must provide all methods from both `Shape` and `Parallel`.
+- The constructor sets the side length.
+- `getPerimeter()` and `getArea()` are required by `Shape`.
+- `numParallelPairs()` is required by `Parallel`.
 - This is how Java allows a class to “inherit” from multiple sources.
 
 ---
@@ -66,50 +72,58 @@ If interface `A` extends interface `B`, then any class that implements `A` must 
 ```java
 // Shape interface as before
 public interface Shape {
-    double getPerimeter();
-    double getArea();
+    double getPerimeter(); // Calculate perimeter
+    double getArea();      // Calculate area
 }
 
 // Polygon interface extends Shape
 public interface Polygon extends Shape {
-    int getNumSides();
+    int getNumSides(); // Method to return the number of sides
 }
 ```
+*Explanation:*  
+- `Polygon` extends `Shape`, so any class that implements `Polygon` must also implement all methods from `Shape`.
+- This allows us to build more specific contracts on top of general ones.
 
 Now, any class that implements `Polygon` must implement all methods from both `Polygon` and `Shape`:
 
 ```java
 public class Triangle implements Polygon {
-    private double sideA, sideB, sideC;
+    private double sideA, sideB, sideC; // Fields for the three sides
 
+    // Constructor to set the side lengths
     public Triangle(double a, double b, double c) {
         sideA = a; sideB = b; sideC = c;
     }
 
+    // Implement getPerimeter from Shape
     public double getPerimeter() {
-        return sideA + sideB + sideC;
+        return sideA + sideB + sideC; // Perimeter = sum of sides
     }
 
+    // Implement getArea from Shape using Heron's formula
     public double getArea() {
-        // Heron's formula for area of triangle
-        double s = getPerimeter() / 2;
+        double s = getPerimeter() / 2; // Semi-perimeter
         return Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
     }
 
+    // Implement getNumSides from Polygon
     public int getNumSides() {
-        return 3;
+        return 3; // Triangle has 3 sides
     }
 }
 ```
-
-**Explanation:**  
-- `Triangle` must implement `getPerimeter()` and `getArea()` from `Shape`, and `getNumSides()` from `Polygon`.
+*Explanation:*  
+- The `Triangle` class must implement all methods from both `Polygon` and `Shape`.
+- `getPerimeter()` adds up the three sides.
+- `getArea()` uses Heron's formula (a standard way to compute the area of a triangle given its sides).
+- `getNumSides()` returns 3, because a triangle has three sides.
 
 ---
 
 ## Real-World Analogy
 
-- **Multiple Interfaces:** Like a smartphone that is both a camera and a phone—it must fulfill the requirements of both.
+- **Multiple Interfaces:** Like a smartphone that is both a camera and a phone—it must fulfill the requirements of both contracts.
 - **Interface Inheritance:** Like a “Smart Camera” contract that includes all the requirements of a “Camera” contract, plus more.
 
 ---
@@ -127,13 +141,13 @@ Suppose we want to model the following:
 ```java
 // Shape interface
 public interface Shape {
-    double getPerimeter();
-    double getArea();
+    double getPerimeter(); // Calculate perimeter
+    double getArea();      // Calculate area
 }
 
 // Polygon interface extends Shape
 public interface Polygon extends Shape {
-    int getNumSides();
+    int getNumSides(); // Number of sides
 }
 
 // Square implements Polygon (and thus Shape)
@@ -165,10 +179,10 @@ public class Circle implements Shape {
     public double getArea() { return Math.PI * radius * radius; }
 }
 ```
-
-**Explanation:**  
+*Explanation:*  
 - `Square` and `Triangle` are both `Polygon`s, so they must implement all methods from both `Polygon` and `Shape`.
 - `Circle` is only a `Shape`, so it does not need to implement `getNumSides()`.
+- Each class provides its own logic for calculating perimeter and area, based on its shape.
 
 ---
 
