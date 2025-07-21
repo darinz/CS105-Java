@@ -239,6 +239,7 @@ public interface Restaurant {
 
 For example, if the following lines were executed using the FastFoodRestaurant class...
 
+```java
     Restaurant r1 = new FastFoodRestaurant("McDonalds");
     r1.addFoodItem("Butter Paneer");
     r1.addFoodItem("Cheeseburger");
@@ -249,9 +250,11 @@ For example, if the following lines were executed using the FastFoodRestaurant c
     r2.addFoodItem("Burrito");
     r2.addFoodItem("Burrito");
     r2.removeFoodItem("Pad Thai");
+```
 
 Then, the following methods would return...
 
+```java
     r1.getName()            // McDonalds
     r1.getCuisine()         // N/A
     r1.getMenu()            // [Cheeseburger]
@@ -262,6 +265,7 @@ Then, the following methods would return...
     r2.getNumFoodItems()    // 2
     r1.hasMoreOptions(r2)   // false
     r1.makeReservation("8:00 pm") // No reservation needed!
+```
 
 Your FastFoodRestaurant class should implement the Restaurant Interface. Your FastFoodRestaurant class should have private fields and should implement the above-outlined public methods. **Write your solution on the next page.**
 
