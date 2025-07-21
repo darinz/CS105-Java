@@ -141,7 +141,8 @@ For each 2d array below, indicate in the right-hand column what values would be 
  [5, 6]]           | ____________________________________________
 
 
-3. **Debugging:** Consider the following buggy implementation of **rotateLeftAndNegateEvens**. The intended behavior of this method is to take a list of integers and integer steps and modify that list so that the numbers are rotated left by the specified number of steps. Additionally, after the rotation, if the number is even and it moves from the front to the back, then it should be negated.
+## 3. **Debugging:** 
+Consider the following buggy implementation of **rotateLeftAndNegateEvens**. The intended behavior of this method is to take a list of integers and integer steps and modify that list so that the numbers are rotated left by the specified number of steps. Additionally, after the rotation, if the number is even and it moves from the front to the back, then it should be negated.
 
 For example, if a variable called list stores this sequence of values and `int steps = 2`:
 
