@@ -148,3 +148,47 @@ Should be:
 
     i--;
 
+
+4. **Collections Programming:** Write a method called mostPopularHobby that takes in a Map with keys that are TA names and values that are sets of hobbies of that TA. For example, if a variable called m contains the following:
+
+    {
+        Atharva = [board games, comedy shows, hiking, video gaming],
+        Chaafen = [Formula 1, reading, traveling, video gaming],
+        Jaylyn = [hiking, traveling, video gaming],
+        Shivani = [cafes, music shows]
+    }
+
+then the call mostPopularHobby(m) should return the String "video gaming" because three of the TAs enjoy this hobby while the other hobbies are less common.
+
+If there is a tie between hobbies, you should break them alphabetically. For instance, if Shivani had an additional hobby of hiking, then the method should return "hiking" since it would be enjoyed by three TAs and comes alphabetically before "video gaming".
+
+You may assume that the given map is not empty and that none of the inner sets are empty.
+
+Your method should not construct any new data structures other than a single Map. It should also not modify the input map or any of the inner sets. You should use interface types and generics appropriately.
+
+```
+public static String mostPopularHobby(Map<String, Set<String>> m) {
+    Map<String, Integer> counts = new TreeMap<>();
+
+    for (String name : m.keySet()) {
+        Set<String> hobbies = m.get(name);
+        for (String h : hobbies) {
+            if (!counts.containsKey(h)) {
+                counts.put(h, 0);
+            }
+            counts.put(h, counts.get(h) + 1);
+        }
+    }
+
+    int max = 0;
+    String hobby = "";
+    for (String h : counts.keySet()) {
+        if (counts.get(h) > max) {
+            max = counts.get(h);
+            hobby = h;
+        }
+    }
+    return hobby;
+}
+```
+
