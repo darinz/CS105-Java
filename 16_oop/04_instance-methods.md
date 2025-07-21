@@ -15,23 +15,32 @@ An **instance method** is a method that belongs to an object (an instance of a c
 
 ### Example: Instance Method
 
+Let's break down the code step by step:
+
 ```java
 public class Point {
-    int x;
-    int y;
+    int x; // Field: x-coordinate of the point
+    int y; // Field: y-coordinate of the point
 
     // Instance method: calculates distance from this point's x to another x
     public int distanceFromX(int otherX) {
-        return Math.abs(x - otherX); // accesses the instance variable 'x'
+        // 'x' refers to the field of the current object
+        // 'otherX' is a parameter passed to the method
+        return Math.abs(x - otherX); // returns the absolute difference
     }
 }
 
 // Usage:
-Point p = new Point();
-p.x = 5;
+Point p = new Point(); // Create a new Point object
+p.x = 5;               // Set the x field to 5
 int d = p.distanceFromX(10); // Calls the instance method on object 'p'
 System.out.println(d); // Output: 5
 ```
+
+**Explanation:**
+- `distanceFromX` is an instance method because it uses the field `x` of the object.
+- You must create an object (`p`) to call this method.
+- The method calculates the distance from the object's `x` value to another value.
 
 ---
 
@@ -46,21 +55,29 @@ A **static method** belongs to the class itself, not to any specific object. You
 
 ### Example: Static Method
 
+Let's annotate the code for clarity:
+
 ```java
 public class Point {
-    int x;
-    int y;
+    int x; // Field: x-coordinate
+    int y; // Field: y-coordinate
 
     // Static method: calculates the difference between two numbers
     public static int diff(int xx, int yy) {
+        // 'xx' and 'yy' are parameters; no use of 'x' or 'y' fields
         return xx - yy;
     }
 }
 
 // Usage:
-int result = Point.diff(10, 3); // Calls the static method on the class
+int result = Point.diff(10, 3); // Calls the static method on the class, not an object
 System.out.println(result); // Output: 7
 ```
+
+**Explanation:**
+- `diff` is a static method because it does not use any instance fields.
+- You call it using the class name (`Point.diff(...)`), not an object.
+- Static methods are often used for utility or helper functions.
 
 ---
 
@@ -74,24 +91,33 @@ Every class in Java inherits a method called `toString()` from the `Object` clas
 
 ### Example: Overriding `toString()`
 
+Let's see how to override and use `toString()`:
+
 ```java
 public class Point {
-    int x;
-    int y;
+    int x; // Field: x-coordinate
+    int y; // Field: y-coordinate
 
     // Override toString to provide a custom string representation
     @Override
     public String toString() {
+        // Returns a string like "Point(3, 4)"
         return "Point(" + x + ", " + y + ")";
     }
 }
 
 // Usage:
-Point p = new Point();
+Point p = new Point(); // Create a new Point object
 p.x = 3;
 p.y = 4;
 System.out.println(p); // Output: Point(3, 4)
+// The toString() method is called automatically by System.out.println
 ```
+
+**Explanation:**
+- The `@Override` annotation tells Java you are replacing the inherited `toString()` method.
+- The method returns a string that describes the object in a human-readable way.
+- When you print the object, Java uses your `toString()` method automatically.
 
 **Note:** The `toString()` method is automatically called whenever an object is treated like a string, such as in `System.out.println(p);` or string concatenation.
 
@@ -100,6 +126,14 @@ System.out.println(p); // Output: Point(3, 4)
 ## Why Not Just Write a `print()` Method?
 
 While you *could* write a `print()` method that prints the object's details, overriding `toString()` is the standard Java way. It integrates with Java's printing and string handling, making your classes easier to use and debug.
+
+**Example:**
+```java
+public void print() {
+    System.out.println(this.toString()); // Calls the toString method
+}
+```
+But using `toString()` is more flexible, as it works with all Java printing and string operations.
 
 ---
 
