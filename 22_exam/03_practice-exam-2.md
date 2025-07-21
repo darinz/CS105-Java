@@ -173,7 +173,8 @@ A TA wrote a buggy implementation of this method shown below. HINT: There are **
 Your task is to fix this implementation so that it behaves as described above. If you are making significant changes to the structure of the method, it may be helpful to write your whole solution from scratch. However, if you are only making minor edits to the code that you can clearly explain, you can also write out just the edits below. If writing edits, specifically mention which line(s) you will change and write out the code you would replace them with. You will need to write correct code on the lines you change/add. If you are deleting some code, make sure it’s clear what parts are being removed. If you are inserting new code, make sure it is unambiguous where this new code belongs. Mention specific line number(s).
 
 
-4. **Collections Programming:** Write a method called **studentsTaught** that takes a map indicating each student’s enrollment history and an instructor’s name and returns a set indicating all students that the given instructor has taught.
+## 4. **Collections Programming:** 
+Write a method called **studentsTaught** that takes a map indicating each student’s enrollment history and an instructor’s name and returns a set indicating all students that the given instructor has taught.
 
 The input map will have keys that are names of students (strings) and corresponding values which are maps representing the classes the student has taken. The value map maps the course code (integers) to the name of the instructor (strings) they took the class with. For example, if a variable called m stored the following map in the format described above:
 
