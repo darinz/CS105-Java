@@ -1,6 +1,5 @@
 # Practice Exam 2
 
-
 The exam is divided into six questions with the following points:
 
     #     Problem Area
@@ -110,6 +109,36 @@ __________________________________________________________
 ( ) Calculates the Hospital in the list that has the lowest Patient-Doctor Ratio
 
 
+2. **Code Tracing:** Consider the method below.
+
+    public static List<Integer> mystery(int[][] data) {
+        List<Integer> result = new ArrayList<>();
+        for (int i = 1; i < data.length; i++) {
+            for (int j = data[i].length - 1; j > 0; j--) {
+                result.add(data[i][j] - 1);
+            }
+        }
+        return result;
+    }
+
+For each 2d array below, indicate in the right-hand column what values would be stored in the list returned by method mystery if the array in the left-hand column is passed as a parameter to mystery. List elements should be listed in proper order as a comma-separated bracketed list, as in [3, 18, 25].
+
+**Input 2D Array** | **Contents of List Returned**
+-------------------|------------------------------
+
+[[0, 1],
+ [2, 3]]           | ____________________________________________
+
+[[0, 1, 2],
+ [3, 4, 5],
+ [6, 7, 8]]        | ____________________________________________
+
+[[3, 4],
+ [1, 2, 3, 4],
+ [],
+ [5, 6]]           | ____________________________________________
+
+
 3. **Debugging:** Consider the following buggy implementation of **rotateLeftAndNegateEvens**. The intended behavior of this method is to take a list of integers and integer steps and modify that list so that the numbers are rotated left by the specified number of steps. Additionally, after the rotation, if the number is even and it moves from the front to the back, then it should be negated.
 
 For example, if a variable called list stores this sequence of values and `int steps = 2`:
@@ -163,32 +192,67 @@ The set you return should be sorted alphabetically. You may assume that the give
 Your method should construct the new set to return but should otherwise not construct any new data structures. Your method should not modify the given Map. You should use interface types and generics appropriately.
 
 
-2. **Code Tracing:** Consider the method below.
 
-    public static List<Integer> mystery(int[][] data) {
-        List<Integer> result = new ArrayList<>();
-        for (int i = 1; i < data.length; i++) {
-            for (int j = data[i].length - 1; j > 0; j--) {
-                result.add(data[i][j] - 1);
-            }
-        }
-        return result;
-    }
+5. **Objects Programming:** Consider the following interface Restaurant. For this problem, you are to write a class called FastFoodRestaurant, which implements the Restaurant. The FastFoodRestaurant class should have two constructors. The first constructor should take a String name and the associated cuisine would be "N/A". The second constructor should take two parameters (String name and String cuisine).
 
-For each 2d array below, indicate in the right-hand column what values would be stored in the list returned by method mystery if the array in the left-hand column is passed as a parameter to mystery. List elements should be listed in proper order as a comma-separated bracketed list, as in [3, 18, 25].
+```java
+public interface Restaurant {
+    // Returns the name of the Restaurant
+    public String getName();
 
-**Input 2D Array** | **Contents of List Returned**
--------------------|------------------------------
+    // Returns the cuisine of the Restaurant (For example: Thai or Indian)
+    public String getCuisine();
 
-[[0, 1],
- [2, 3]]           | ____________________________________________
+    // Returns a list of items on the menu.
+    public List<String> getMenu();
 
-[[0, 1, 2],
- [3, 4, 5],
- [6, 7, 8]]        | ____________________________________________
+    // Adds a food item to the menu. If the food item is already present, then there is no
+    // change.
+    public void addFoodItem(String foodName);
 
-[[3, 4],
- [1, 2, 3, 4],
- [],
- [5, 6]]           | ____________________________________________
+    // Removes a food item from the menu.
+    // Throws an IllegalArgumentException if the food item does not exist.
+    public void removeFoodItem(String foodName);
+
+    // Returns the number of food items on the menu.
+    public int getNumFoodItems();
+
+    // Makes a reservation at the particular restaurant. If a restaurant doesn't take
+    // reservations (ex. Fast Food restaurants), then it returns "No reservation needed!".
+    // If a restaurant accepts reservations, it returns "Success" or "Failure".
+    public String makeReservation(String time);
+
+    // Returns true if this restaurant has more items than the other restaurant
+    // otherwise false.
+    public boolean hasMoreOptions(Restaurant other);
+}
+```
+
+For example, if the following lines were executed using the FastFoodRestaurant class...
+
+    Restaurant r1 = new FastFoodRestaurant("McDonalds");
+    r1.addFoodItem("Butter Paneer");
+    r1.addFoodItem("Cheeseburger");
+    r1.removeFoodItem("Butter Paneer");
+    Restaurant r2 = new FastFoodRestaurant("Chipotle", "Mexican");
+    r2.addFoodItem("Tacos");
+    r2.addFoodItem("Pad Thai");
+    r2.addFoodItem("Burrito");
+    r2.addFoodItem("Burrito");
+    r2.removeFoodItem("Pad Thai");
+
+Then, the following methods would return...
+
+    r1.getName()            // McDonalds
+    r1.getCuisine()         // N/A
+    r1.getMenu()            // [Cheeseburger]
+    r1.getNumFoodItems()    // 1
+    r2.getName()            // Chipotle
+    r2.getCuisine()         // Mexican
+    r2.getMenu()            // [Tacos, Burrito] -> order does not matter
+    r2.getNumFoodItems()    // 2
+    r1.hasMoreOptions(r2)   // false
+    r1.makeReservation("8:00 pm") // No reservation needed!
+
+Your FastFoodRestaurant class should implement the Restaurant Interface. Your FastFoodRestaurant class should have private fields and should implement the above-outlined public methods. **Write your solution on the next page.**
 
