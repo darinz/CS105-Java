@@ -110,6 +110,59 @@ __________________________________________________________
 ( ) Calculates the Hospital in the list that has the lowest Patient-Doctor Ratio
 
 
+3. **Debugging:** Consider the following buggy implementation of **rotateLeftAndNegateEvens**. The intended behavior of this method is to take a list of integers and integer steps and modify that list so that the numbers are rotated left by the specified number of steps. Additionally, after the rotation, if the number is even and it moves from the front to the back, then it should be negated.
+
+For example, if a variable called list stores this sequence of values and `int steps = 2`:
+
+    [1, 2, 3, 4, 5, 6]
+
+We want to rotate the numbers within this list to the left by two steps. Additionally, we want to negate the even numbers that move from the front to the back. If the method gets is passed a negative value for steps or if the list is empty, then the method should throw an IllegalArgumentException(). So, our expected output is:
+
+    [3, 4, 5, 6, 1, -2]
+
+Notice that 2 became -2 because it moved from the front to the back.
+
+A TA wrote a buggy implementation of this method shown below. HINT: There are **2** bugs.
+
+    1. public static void rotateLeftAndNegateEvens(List<Integer> list, int steps) {
+    2.     if (steps < 0 || list.length() == 0) {
+    3.         throw new IllegalArgumentException();
+    4.     }
+    5.     for (int i = 0; i < steps; i++) {
+    6.         int valFirst = list.remove(i);
+    7.         if (valFirst % 2 == 0) {
+    8.             list.add(valFirst * -1);
+    9.         } else {
+   10.             list.add(valFirst);
+   11.         }
+   12.     }
+   13. }
+
+Your task is to fix this implementation so that it behaves as described above. If you are making significant changes to the structure of the method, it may be helpful to write your whole solution from scratch. However, if you are only making minor edits to the code that you can clearly explain, you can also write out just the edits below. If writing edits, specifically mention which line(s) you will change and write out the code you would replace them with. You will need to write correct code on the lines you change/add. If you are deleting some code, make sure it’s clear what parts are being removed. If you are inserting new code, make sure it is unambiguous where this new code belongs. Mention specific line number(s).
+
+
+4. **Collections Programming:** Write a method called **studentsTaught** that takes a map indicating each student’s enrollment history and an instructor’s name and returns a set indicating all students that the given instructor has taught.
+
+The input map will have keys that are names of students (strings) and corresponding values which are maps representing the classes the student has taken. The value map maps the course code (integers) to the name of the instructor (strings) they took the class with. For example, if a variable called m stored the following map in the format described above:
+
+    {Colton={163=Kevin},
+     Darel={416=Hunter, 373=Kevin, 143=Kevin},
+     Ben={373=Kevin, 143=Stuart},
+     Atharva={121=Miya, 122=Hunter, 123=Brett}}
+
+Then a call to studentsTaught(m, "Kevin") should return a Set with the following elements:
+
+    [Ben, Colton, Darel]
+
+A call to studentsTaught(m, "Elba") should return an empty Set, since none of the students in m took a course with her.
+
+Notice that some instructors teach multiple courses and the same course may be taught by different instructors (in different quarters, for example).
+
+The set you return should be sorted alphabetically. You may assume that the given map and none of its contents are null.
+
+Your method should construct the new set to return but should otherwise not construct any new data structures. Your method should not modify the given Map. You should use interface types and generics appropriately.
+
+
 2. **Code Tracing:** Consider the method below.
 
     public static List<Integer> mystery(int[][] data) {
