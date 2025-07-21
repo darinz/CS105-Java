@@ -61,7 +61,8 @@ public class Hospital {
 ```
 
 **Part A:** Consider the following code snippet.
-```
+
+```java
 Hospital h1 = new Hospital("Seattle Childrens", 200, 1200);
 Hospital h2 = new Hospital("Overlake");
 System.out.println(h1);
