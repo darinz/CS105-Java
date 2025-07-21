@@ -143,10 +143,8 @@ The curriculum is organized around 17 specific learning objectives across seven 
 - Practice problems and review concepts
 - Sets, maps, and nested collections
 
-### 13. [Collections and Objects](13_collections-objects/)
+### 13. [Collections and Objects](13_nested-collections/)
 - Nested collections and complex data structures
-- Introduction to object-oriented programming
-- Class design and encapsulation
 
 ### 14. [Programming Assignment 3](14_pa-3/)
 - Project focusing on collections and object design
@@ -155,6 +153,8 @@ The curriculum is organized around 17 specific learning objectives across seven 
 - Assessment covering intermediate concepts
 
 ### 16. [Object-Oriented Programming](16_oop/)
+- Introduction to object-oriented programming
+- Class design and encapsulation
 - Encapsulation and instance methods
 - Advanced OOP principles
 - Class relationships and inheritance
