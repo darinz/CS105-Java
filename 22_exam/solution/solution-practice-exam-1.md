@@ -1,7 +1,7 @@
 # Practice Exam 1 Solution
 
 
-1. **Conceptual**: Each of these parts should be considered independent of the others.
+## 1. **Conceptual**: Each of these parts should be considered independent of the others.
 
 **Part A**: (Select all that apply) Which of the following are true about Sets?
 
