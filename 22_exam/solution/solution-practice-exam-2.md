@@ -214,3 +214,120 @@ public static Set<String> studentsTaught(
 }
 ```
 
+5. **Objects Programming:** Consider the following interface Restaurant. For this problem, you are to write a class called FastFoodRestaurant, which implements the Restaurant. The FastFoodRestaurant class should have two constructors. The first constructor should take a String name and the associated cuisine would be “N/A”. The second constructor should take two parameters (String name and String cuisine).
+
+public interface Restaurant {
+    // Returns the name of the Restaurant
+    public String getName();
+
+    // Returns the cuisine of the Restaurant (For example: Thai or Indian)
+    public String getCuisine();
+
+    // Returns a list of items on the menu
+    public List<String> getMenu();
+
+    // Adds a food item to the menu. If the food item is already present, then there is no
+    // change.
+    public void addFoodItem(String foodName);
+
+    // Removes a food item from the menu.
+    // Throws an IllegalArgumentException if the food item does not exist.
+    public void removeFoodItem(String foodName);
+
+    // Returns the number of food items on the menu
+    public int getNumFoodItems();
+
+    // Makes a reservation at the particular restaurant. If a restaurant doesn’t take
+    // reservations (ex. Fast Food restaurants), then it returns “No reservation needed!”.
+    // If a restaurant accepts reservations, it returns “Success” or “Failure”.
+    public String makeReservation(String time);
+
+    // Returns true if this restaurant has more items than the other restaurant
+    // otherwise false
+    public boolean hasMoreOptions(Restaurant other);
+}
+
+For example, if the following lines were executed using the FastFoodRestaurant class...
+    Restaurant r1 = new FastFoodRestaurant("McDonalds");
+    r1.addFoodItem("Butter Paneer");
+    r1.addFoodItem("Cheeseburger");
+    r1.removeFoodItem("Butter Paneer");
+    Restaurant r2 = new FastFoodRestaurant("Chipotle", "Mexican");
+    r2.addFoodItem("Tacos");
+    r2.addFoodItem("PadThai");
+    r2.addFoodItem("Burrito");
+    r2.addFoodItem("Burrito");
+    r2.removeFoodItem("PadThai");
+
+Then, the following methods would return...
+    r1.getName()            // McDonalds
+    r1.getCuisine()         // N/A
+    r1.getMenu()            // [Cheeseburger]
+    r1.getNumFoodItems()    // 1
+    r2.getName()            // Chipotle
+    r2.getCuisine()         // Mexican
+    r2.getMenu()            // [Tacos, Burrito] -> order does not matter
+    r2.getNumFoodItems()    // 2
+    r1.hasMoreOptions(r2)   // false
+    r1.makeReservation("8:00 pm") // No reservation needed!
+
+Your FastFoodRestaurant class should implement the Restaurant Interface. Your FastFoodRestaurant class should have private fields and should implement the above-outlined public methods. **Write your solution on the next page.**
+
+**Solution:**
+
+import java.util.*;
+
+public class FastFoodRestaurant implements Restaurant {
+    private String name;
+    private String cuisine;
+    private Set<String> menu;
+
+    public FastFoodRestaurant(String name, String cuisine) {
+        this.name = name;
+        this.cuisine = cuisine;
+        this.menu = new HashSet<>();
+    }
+
+    public FastFoodRestaurant(String name) {
+        this(name, "N/A");
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getCuisine() {
+        return this.cuisine;
+    }
+
+    public List<String> getMenu() {
+        return new ArrayList<>(this.menu);
+    }
+
+    public void addFoodItem(String foodName) {
+        this.menu.add(foodName);
+    }
+
+    public void removeFoodItem(String foodName) {
+        if (!this.menu.contains(foodName)) {
+            throw new IllegalArgumentException();
+        }
+        this.menu.remove(foodName);
+    }
+
+    public int getNumFoodItems() {
+        return this.menu.size();
+    }
+
+    public boolean hasMoreOptions(Restaurant other) {
+        if (this.getNumFoodItems() > other.getNumFoodItems()) {
+            return true;
+        }
+        return false;
+    }
+
+    public String makeReservation(String time) {
+        return "No reservation needed!";
+    }
+}
+
