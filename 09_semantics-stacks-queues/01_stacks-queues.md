@@ -18,20 +18,24 @@ A Java construct that lets programmers specify what methods a class should have.
 
 - **Example:**
 ```java
+// This is a simple interface for a Stack in Java.
+// It describes what methods a Stack should have, but not how they work.
 public interface Stack<E> {
-    void push(E item);
-    E pop();
-    E peek();
-    boolean isEmpty();
-    int size();
+    void push(E item);    // Add an item to the top
+    E pop();              // Remove and return the top item
+    E peek();             // Return (but don't remove) the top item
+    boolean isEmpty();    // Check if the stack is empty
+    int size();           // Get the number of items in the stack
 }
 ```
+*Tip: The <E> means this Stack can hold any type of object (like String, Integer, etc.).*
 
 **Implementation:**
 Concrete code that meets the specified interface. For example, the `ArrayList` and `LinkedList` classes that implement the `List` interface. Implementations provide the *how*.
 
 - **Example:**
 ```java
+// This class implements the Stack interface using an array (ArrayList) to store elements.
 public class ArrayStack<E> implements Stack<E> {
     // ... actual code for storing and managing elements ...
 }
@@ -64,18 +68,24 @@ import java.util.Stack;
 
 public class StackExample {
     public static void main(String[] args) {
+        // Create a new Stack that holds Strings
         Stack<String> s = new Stack<>();
-        s.push("a"); // Stack: [a]
-        s.push("b"); // Stack: [a, b]
-        s.push("c"); // Stack: [a, b, c]
+        s.push("a"); // Add "a" to the stack. Stack: [a]
+        s.push("b"); // Add "b" to the stack. Stack: [a, b]
+        s.push("c"); // Add "c" to the stack. Stack: [a, b, c]
 
+        // Remove and print the top element ("c")
         System.out.println(s.pop()); // Output: c (removes top)
+        // Look at the top element without removing it ("b")
         System.out.println(s.peek()); // Output: b (top remains)
+        // Print the number of elements in the stack
         System.out.println(s.size()); // Output: 2
+        // Check if the stack is empty
         System.out.println(s.isEmpty()); // Output: false
     }
 }
 ```
+*Explanation: Each operation changes or inspects the stack. Notice how pop removes the most recently added item (LIFO).* 
 
 #### Common Pitfalls
 - Calling `pop()` or `peek()` on an empty stack throws `EmptyStackException`.
@@ -83,28 +93,36 @@ public class StackExample {
 
 #### Custom Stack Implementation (Array-based)
 ```java
+// This is a simple custom stack using an ArrayList for storage.
 public class MyStack<E> {
+    // Use an ArrayList to store stack elements
     private java.util.ArrayList<E> data = new java.util.ArrayList<>();
 
+    // Add an item to the top of the stack
     public void push(E item) {
         data.add(item);
     }
+    // Remove and return the top item
     public E pop() {
-        if (isEmpty()) throw new java.util.EmptyStackException();
-        return data.remove(data.size() - 1);
+        if (isEmpty()) throw new java.util.EmptyStackException(); // Check for empty
+        return data.remove(data.size() - 1); // Remove last item
     }
+    // Return (but don't remove) the top item
     public E peek() {
-        if (isEmpty()) throw new java.util.EmptyStackException();
-        return data.get(data.size() - 1);
+        if (isEmpty()) throw new java.util.EmptyStackException(); // Check for empty
+        return data.get(data.size() - 1); // Get last item
     }
+    // Check if the stack is empty
     public boolean isEmpty() {
         return data.isEmpty();
     }
+    // Get the number of items in the stack
     public int size() {
         return data.size();
     }
 }
 ```
+*Tip: This stack grows as needed because ArrayList resizes automatically! Always check for empty before popping or peeking.*
 
 ---
 
@@ -147,18 +165,24 @@ import java.util.LinkedList;
 
 public class QueueExample {
     public static void main(String[] args) {
+        // Create a new Queue that holds Integers, implemented by LinkedList
         Queue<Integer> q = new LinkedList<>();
-        q.add(42);   // Queue: [42]
-        q.add(-3);   // Queue: [42, -3]
-        q.add(17);   // Queue: [42, -3, 17]
+        q.add(42);   // Add 42 to the queue. Queue: [42]
+        q.add(-3);   // Add -3 to the queue. Queue: [42, -3]
+        q.add(17);   // Add 17 to the queue. Queue: [42, -3, 17]
 
+        // Remove and print the front element (42)
         System.out.println(q.remove()); // Output: 42 (removes front)
+        // Look at the front element without removing it (-3)
         System.out.println(q.peek());   // Output: -3 (front remains)
+        // Print the number of elements in the queue
         System.out.println(q.size());   // Output: 2
+        // Check if the queue is empty
         System.out.println(q.isEmpty()); // Output: false
     }
 }
 ```
+*Explanation: Queues process items in the order they arrive (FIFO). Remove always takes from the front, add always puts at the back.*
 
 #### Important Notes
 - When constructing a queue, you must use a new `LinkedList` object instead of a new `Queue` object. `Queue` is an interface and cannot be instantiated directly.
@@ -167,27 +191,35 @@ public class QueueExample {
 
 #### Custom Queue Implementation (Array-based)
 ```java
+// This is a simple custom queue using a LinkedList for storage.
 public class MyQueue<E> {
+    // Use a LinkedList to store queue elements
     private java.util.LinkedList<E> data = new java.util.LinkedList<>();
 
+    // Add an item to the back of the queue
     public void add(E item) {
         data.addLast(item);
     }
+    // Remove and return the front item
     public E remove() {
-        if (isEmpty()) throw new java.util.NoSuchElementException();
-        return data.removeFirst();
+        if (isEmpty()) throw new java.util.NoSuchElementException(); // Check for empty
+        return data.removeFirst(); // Remove first item
     }
+    // Return (but don't remove) the front item
     public E peek() {
         return data.peekFirst(); // returns null if empty
     }
+    // Check if the queue is empty
     public boolean isEmpty() {
         return data.isEmpty();
     }
+    // Get the number of items in the queue
     public int size() {
         return data.size();
     }
 }
 ```
+*Tip: LinkedList makes it easy to add/remove from both ends. Always check for empty before removing!*
 
 ---
 
