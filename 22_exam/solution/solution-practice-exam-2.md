@@ -175,3 +175,42 @@ Your task is to fix this implementation so that it behaves as described above. I
 There are two bugs. Firstly, ArrayLists don’t have a method .length(). They have a method .size() instead (Line 2). Secondly, on Line 6, we don’t want to remove at index i, instead always from the start (index = 0).
 ```
 
+4. **Collections Programming:** Write a method called **studentsTaught** that takes a map indicating each student’s enrollment history and an instructor’s name and returns a set indicating all students that the given instructor has taught.
+
+The input map will have keys that are names of students (strings) and corresponding values which are maps representing the classes the student has taken. The value map maps the course code (integers) to the name of the instructor (strings) they took the class with. For example, if a variable called m stored the following map in the format described above:
+
+    {Colton={163=Kevin},
+     Darel={416=Hunter, 373=Kevin, 143=Kevin},
+     Ben={373=Kevin, 143=Stuart},
+     Atharva={121=Miya, 122=Hunter, 123=Brett}}
+
+Then a call to studentsTaught(m, "Kevin") would return a Set with the following elements:
+
+    [Ben, Colton, Darel]
+
+A call to studentsTaught(m, "Elba") should return an empty Set, since none of the students in m took a course with her.
+
+Notice that some instructors teach multiple courses and the same course may be taught by different instructors (in different quarters, for example).
+
+The set you return should be sorted alphabetically. You may assume that the given map and none of its contents are null.
+
+Your method should construct the new set to return but should otherwise not construct any other new data structures. Your method should not modify the given Map. You should use interface types and generics appropriately.
+
+```java
+public static Set<String> studentsTaught(
+        Map<String, Map<Integer, String>> studentToCourse,
+        String instructor) {
+    Set<String> names = new TreeSet<>();
+    for (String student : studentToCourse.keySet()) {
+        Map<Integer, String> courses = studentToCourse.get(student);
+        for (int course : courses.keySet()) {
+            String instr = courses.get(course);
+            if (instr.equals(instructor)) {
+                names.add(student);
+            }
+        }
+    }
+    return names;
+}
+```
+
