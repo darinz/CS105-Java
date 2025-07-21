@@ -1,0 +1,13 @@
+Book: "1984" by George Orwell [Available]
+Book: "The Hobbit" by J.R.R. Tolkien [Available]
+Book: "To Kill a Mockingbird" by Harper Lee [Available]
+
+-- Alice checks out "The Hobbit" --
+Book: "1984" by George Orwell [Available]
+Book: "The Hobbit" by J.R.R. Tolkien [Checked out by: Alice]
+Book: "To Kill a Mockingbird" by Harper Lee [Available]
+
+-- Alice returns "The Hobbit" --
+Book: "1984" by George Orwell [Available]
+Book: "The Hobbit" by J.R.R. Tolkien [Available]
+Book: "To Kill a Mockingbird" by Harper Lee [Available] 
