@@ -15,9 +15,10 @@ import java.util.*;
 public class StudentGradeManager {
     
     // Constants for grade calculations
-    private static final double ASSIGNMENT_WEIGHT = 0.40;
-    private static final double MIDTERM_WEIGHT = 0.25;
-    private static final double FINAL_WEIGHT = 0.35;
+    // Uncomment these to use them
+    // private static final double ASSIGNMENT_WEIGHT = 0.40;
+    // private static final double MIDTERM_WEIGHT = 0.25;
+    // private static final double FINAL_WEIGHT = 0.35;
     
     /**
      * Main method - orchestrates the entire grade management process
