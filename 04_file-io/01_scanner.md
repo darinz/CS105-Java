@@ -251,6 +251,105 @@ Wait, let me recount carefully:
 
 Actually, the answer should be **4 tokens**, not 6. The quoted string "Hello world !" is treated as a single token.
 
+## Scanner with Strings (not files!)
+
+### Reading from String Input
+You can also use Scanner to parse and tokenize strings, not just files or user input. This is useful for processing text data that's already stored in variables.
+
+```java
+// Create a string containing multiple words/tokens
+String str = "A quick, brown fox";
+
+// Create a Scanner that reads from the string (instead of System.in or a file)
+Scanner stringScan = new Scanner(str);
+
+// Process each token in the string
+while (stringScan.hasNext()) {
+    // Read the next token from the string
+    String nextToken = stringScan.next();
+    
+    // Process the token (in this case, just print it)
+    System.out.println(nextToken);
+}
+
+// Always close the Scanner when done
+stringScan.close();
+```
+
+**Output**:
+```
+A
+quick,
+brown
+fox
+```
+
+### Why Use Scanner with Strings?
+
+1. **Tokenization**: Easily split strings into individual words/tokens
+2. **Parsing**: Convert string tokens to different data types
+3. **Processing**: Apply the same logic to string data as you would to file data
+4. **Consistency**: Use familiar Scanner methods regardless of data source
+
+### Advanced String Processing Example
+```java
+// String containing mixed data types
+String data = "John 25 3.8 true";
+
+// Create Scanner for the string
+Scanner dataScan = new Scanner(data);
+
+// Parse different data types from the string
+if (dataScan.hasNext()) {
+    String name = dataScan.next();        // "John"
+    
+    if (dataScan.hasNextInt()) {
+        int age = dataScan.nextInt();     // 25
+        
+        if (dataScan.hasNextDouble()) {
+            double gpa = dataScan.nextDouble(); // 3.8
+            
+            if (dataScan.hasNextBoolean()) {
+                boolean isStudent = dataScan.nextBoolean(); // true
+                
+                System.out.println("Name: " + name);
+                System.out.println("Age: " + age);
+                System.out.println("GPA: " + gpa);
+                System.out.println("Is Student: " + isStudent);
+            }
+        }
+    }
+}
+
+dataScan.close();
+```
+
+### String Processing with Custom Delimiters
+```java
+// String with comma-separated values
+String csvData = "apple,banana,orange,grape";
+
+// Create Scanner with comma delimiter
+Scanner csvScan = new Scanner(csvData);
+csvScan.useDelimiter(",");
+
+// Process each fruit
+while (csvScan.hasNext()) {
+    String fruit = csvScan.next().trim(); // trim() removes extra spaces
+    System.out.println("Fruit: " + fruit);
+}
+
+csvScan.close();
+```
+
+**Output**:
+```
+Fruit: apple
+Fruit: banana
+Fruit: orange
+Fruit: grape
+```
+
 ## Scanner for File I/O
 
 ### Basic File Reading Setup
