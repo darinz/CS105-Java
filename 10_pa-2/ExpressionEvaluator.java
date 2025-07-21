@@ -1,5 +1,6 @@
 import java.util.*;
-import java.io.*;
+// Uncomment this to read input from a file
+// import java.io.*;
 
 public class ExpressionEvaluator {
     public static void main(String[] args) {
