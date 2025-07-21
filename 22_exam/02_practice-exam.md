@@ -175,7 +175,8 @@ You may assume that the given map is not empty and that none of the inner sets a
 Your method should _not_ construct any new data structures other than a single Map. It should also not modify the input map or any of the inner sets. You should use interface types and generics appropriately.
 
 
-5. **Objects Programming.** Consider the following interface Team. For this problem you are to write a class called RelayTeam which implements the Team interface and represents a team of people on a relay racing team and their times for running 400m. The RelayTeam should have a constructor which takes one String parameter, the team’s mascot.
+## 5. **Objects Programming.**
+Consider the following interface Team. For this problem you are to write a class called RelayTeam which implements the Team interface and represents a team of people on a relay racing team and their times for running 400m. The RelayTeam should have a constructor which takes one String parameter, the team’s mascot.
 
 ```java
 public interface Team {
