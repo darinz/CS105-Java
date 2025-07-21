@@ -166,7 +166,7 @@ You may assume that the given map is not empty and that none of the inner sets a
 
 Your method should not construct any new data structures other than a single Map. It should also not modify the input map or any of the inner sets. You should use interface types and generics appropriately.
 
-```
+```java
 public static String mostPopularHobby(Map<String, Set<String>> m) {
     Map<String, Integer> counts = new TreeMap<>();
 
@@ -191,4 +191,139 @@ public static String mostPopularHobby(Map<String, Set<String>> m) {
     return hobby;
 }
 ```
+
+
+5. **Objects Programming:** Consider the following interface Team. For this problem you are to write a class called RelayTeam which implements the Team interface and represents a team of people on a relay racing team and their times for running 400m. The RelayTeam should have a constructor which takes one String parameter, the team’s mascot.
+
+```java
+public interface Team {
+    // Returns the mascot of this team.
+    public String getMascot();
+
+    // Adds a runner to this relay team with the given time in seconds.
+    // Throws an IllegalArgumentException if the runner is already on the team
+    public void addRunner(String runner, double time);
+
+    // Substitutes newRunner for oldRunner on the relay team with newTime
+    // Throws an IllegalArgumentException if oldRunner is not on the team or
+    // if newRunner is already on this team, or if newTime is negative.
+    public void substituteRunner(String oldRunner, String newRunner, int newTime);
+
+    // Returns the name of the runner on this team that is the fastest (shortest time).
+    // If two runners are tied for fastest, this method should return the name that
+    // is alphabetically first.
+    // Throws an IllegalStateException if there are no runners on this team.
+    public String getFastestRunner();
+
+    // Returns the average running time across all runners on the team,
+    // or 0 if there are no runners.
+    public double getAverageTime();
+
+    // Returns true if this team has a faster average time than the given other team,
+    // and false otherwise.
+    public boolean hasFasterAverage(Team other);
+
+    // Returns a string representation of this team. The format should be
+    // as follows:
+    //   <team mascot>'s average time: <average time> s
+    // Eg, for the Cheetahs with an average time of 52 seconds,
+    // the resulting toString would look like:
+    //   Cheetahs's average time: 52 s
+    // You do not need to round the resulting average
+    public String toString();
+}
+```
+
+For example, if the following lines were executed using your RelayTeam class…
+
+```java
+Team team1 = new RelayTeam("Sloths");
+team1.addRunner("Simon", 40);
+team1.addRunner("Subhash", 51);
+team1.substituteRunner("Subhash", "Samira", 40);
+
+Team team2 = new RelayTeam("Turtles");
+team2.addRunner("Thuy", 45);
+team2.addRunner("Tanya", 55);
+```
+
+Then the following method calls would return…
+
+team1.getMascot();           // Sloths
+team1.getFastestRunner();    // Samira
+team2.getAverageTime();      // 50
+team1.hasFasterAverage(team2); // true
+team2.toString();            // Turtles's average time: 50 s
+
+Your RelayTeam class should implement the Team interface. Your RelayTeam class should have private fields and you should use interface types and generics appropriately.
+
+---
+
+```java
+import java.util.*;
+
+public class RelayTeam implements Team {
+    private String mascot;
+    private Map<String, Double> runners;
+
+    public RelayTeam(String mascot) {
+        this.mascot = mascot;
+        runners = new TreeMap<>();
+    }
+
+    public String getMascot() {
+        return mascot;
+    }
+
+    public void addRunner(String runner, double time) {
+        if (runners.containsKey(runner) || time < 0) {
+            throw new IllegalArgumentException();
+        }
+        runners.put(runner, time);
+    }
+
+    public void substituteRunner(String oldRunner, String newRunner, double newTime) {
+        if (!runners.containsKey(oldRunner) ||
+            runners.containsKey(newRunner) || newTime < 0) {
+            throw new IllegalArgumentException();
+        }
+        runners.remove(oldRunner);
+        runners.put(newRunner, newTime);
+    }
+
+    public String getFastestRunner() {
+        if (runners.size() == 0) {
+            throw new IllegalStateException();
+        }
+        double fastestTime = Double.MAX_VALUE;
+        String fastest = "";
+        for (String runner : runners.keySet()) {
+            double time = runners.get(runner);
+            if (time < fastestTime) {
+                fastestTime = time;
+                fastest = runner;
+            }
+        }
+        return fastest;
+    }
+
+    public double getAverageTime() {
+        if (runners.size() == 0) return 0;
+
+        double total = 0;
+        for (String runner : runners.keySet()) {
+            double time = runners.get(runner);
+            total += time;
+        }
+        return total / runners.size();
+    }
+
+    public boolean hasFasterAverage(Team other) {
+        return this.getAverageTime() < other.getAverageTime();
+    }
+
+    public String toString() {
+        return mascot + "'s average time: " + this.getAverageTime() + " s.";
+    }
+}
 
