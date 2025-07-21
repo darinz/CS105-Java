@@ -4,3 +4,4 @@
 - Structured assignments
 - Programming in Java
 - Applying & implementing course concepts
+- Focus on Stacks & Queues
