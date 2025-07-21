@@ -332,3 +332,70 @@ public class FastFoodRestaurant implements Restaurant {
     }
 }
 
+6. **Stacks/Queues Programming:** Write a method called mirrorSplit that takes a stack of integers as a parameter and that splits each value into two halves, adding new values to the stack in a mirror position. For example, suppose that a stack s stores the following values:
+
+    bottom [14, 20, 8, 12] top
+
+and we make the following call:
+
+    mirrorSplit(s);
+
+Then s should store the following values after the call:
+
+    bottom [7, 10, 4, 6, 6, 4, 10, 7] top
+    ^  ^  ^  ^  ^  ^  ^  ^
+    |  |  |  +--+  |  |
+    |  |  +--------+  |
+    |  +--------------+
+    +------------------+
+    mirror positions
+
+The first value 14 has been split in half into two 7s which appear in mirror positions (first and last). The second value 20 has been split in half into two 10s which appear in mirror positions (second and second-to-last). And so on. This example included just even numbers in which case you get a true mirror image. If the stack contains odd numbers, they should be split so as to add up to the original with the larger value appearing closer to the bottom of the stack. For example, if the stack stores these values:
+
+    bottom [13, 5, 12] top
+
+After the call, it would store the following values:
+
+    bottom [7, 3, 6, 6, 2, 6] top
+
+The first value 13 has been split into 7 and 6 with the 7 included as the first value and 6 included as the last value. The value 5 has been split into 3 and 2 with 3 appearing as the second value and 2 appearing as the second-to-last value. And so on.
+
+For an E, your solution must obey the following restrictions. A solution that disobeys them may get an S, but it is not guaranteed.
+
+* You may use one queue as auxiliary storage. You may not use other structures (arrays, lists, etc.), but you can have as many simple variables as you like.
+* Use the Queue interface and Stack/LinkedList classes discussed in class.
+* Use stacks/queues in stack/queue-like ways only. Do not use index-based methods such as get, search, or set, or for-each loops or iterators. You may call add, remove, push, pop, peek, isEmpty, and size.
+* Do not use advanced material such as recursion to solve the problem.
+
+You have access to the following two methods and may call them as needed to help you solve the problem:
+
+    public static void s2q(Stack<Integer> s, Queue<Integer> q) {
+        while (!s.isEmpty()) {
+            q.add(s.pop());
+        }
+    }
+
+    public static void q2s(Queue<Integer> q, Stack<Integer> s) {
+        while (!q.isEmpty()) {
+            s.push(q.remove());
+        }
+    }
+
+```java
+public static void mirrorSplit(Stack<Integer> s) {
+    Queue<Integer> q = new LinkedList<>();
+    s2q(s, q);
+    int oldSize = q.size();
+    for (int i = 0; i < oldSize; i++) {
+        int n = q.remove();
+        q.add(n / 2);
+        s.push(n / 2 + n % 2);
+    }
+    s2q(s, q);
+    for (int i = 0; i < oldSize; i++) {
+        q.add(q.remove());
+    }
+    q2s(q, s);
+}
+```
+
