@@ -1,0 +1,115 @@
+=== Student Grade Manager ===
+Reading student data and processing grades...
+
+Reading student data from students.txt...
+Successfully read 10 student records.
+
+Reading grade data from grades.txt...
+Successfully read 10 grade records.
+
+Calculating final grades...
+Generating reports...
+Reports generated successfully!
+Grade processing completed successfully!
+
+==========================================
+CLASS SUMMARY REPORT
+==========================================
+Total Students: 10
+Class Average: 82.45
+Highest Score: 93.25 (Emily Davis - A)
+Lowest Score: 68.45 (David Wilson - D)
+
+Grade Distribution:
+A: 3 students (30.0%)
+B: 4 students (40.0%)
+C: 2 students (20.0%)
+D: 1 students (10.0%)
+F: 0 students (0.0%)
+
+==========================================
+INDIVIDUAL STUDENT REPORTS
+==========================================
+
+STUDENT REPORT - John Smith (ID: 1001)
+Email: john.smith@email.com
+Assignment Score: 85.5
+Midterm Score: 78.0
+Final Score: 82.5
+Final Grade: 82.35 (B)
+
+STUDENT REPORT - Sarah Johnson (ID: 1002)
+Email: sarah.johnson@email.com
+Assignment Score: 92.0
+Midterm Score: 88.5
+Final Score: 90.0
+Final Grade: 90.38 (A)
+
+STUDENT REPORT - Michael Brown (ID: 1003)
+Email: michael.brown@email.com
+Assignment Score: 76.5
+Midterm Score: 72.0
+Final Score: 75.5
+Final Grade: 74.85 (C)
+
+STUDENT REPORT - Emily Davis (ID: 1004)
+Email: emily.davis@email.com
+Assignment Score: 95.0
+Midterm Score: 91.5
+Final Score: 93.0
+Final Grade: 93.25 (A)
+
+STUDENT REPORT - David Wilson (ID: 1005)
+Email: david.wilson@email.com
+Assignment Score: 68.0
+Midterm Score: 65.5
+Final Score: 70.0
+Final Grade: 68.45 (D)
+
+STUDENT REPORT - Lisa Anderson (ID: 1006)
+Email: lisa.anderson@email.com
+Assignment Score: 89.5
+Midterm Score: 85.0
+Final Score: 87.5
+Final Grade: 87.55 (B)
+
+STUDENT REPORT - James Taylor (ID: 1007)
+Email: james.taylor@email.com
+Assignment Score: 82.0
+Midterm Score: 79.5
+Final Score: 81.0
+Final Grade: 80.88 (B)
+
+STUDENT REPORT - Jennifer Martinez (ID: 1008)
+Email: jennifer.martinez@email.com
+Assignment Score: 91.0
+Midterm Score: 87.0
+Final Score: 89.5
+Final Grade: 89.53 (B)
+
+STUDENT REPORT - Robert Garcia (ID: 1009)
+Email: robert.garcia@email.com
+Assignment Score: 73.5
+Midterm Score: 70.0
+Final Score: 72.5
+Final Grade: 72.15 (C)
+
+STUDENT REPORT - Amanda Rodriguez (ID: 1010)
+Email: amanda.rodriguez@email.com
+Assignment Score: 88.0
+Midterm Score: 84.5
+Final Score: 86.0
+Final Grade: 86.38 (B)
+
+==========================================
+GRADE DISTRIBUTION REPORT
+==========================================
+Letter Grade | Count | Percentage
+-------------|-------|------------
+A            |   3   |    30.0%
+B            |   4   |    40.0%
+C            |   2   |    20.0%
+D            |   1   |    10.0%
+F            |   0   |     0.0%
+-------------|-------|------------
+Total        |  10   |   100.0% 
