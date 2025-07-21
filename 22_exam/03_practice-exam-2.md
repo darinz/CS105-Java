@@ -262,7 +262,8 @@ Then, the following methods would return...
 Your FastFoodRestaurant class should implement the Restaurant Interface. Your FastFoodRestaurant class should have private fields and should implement the above-outlined public methods. **Write your solution on the next page.**
 
 
-6. **Stacks/Queues Programming:** Write a method called **mirrorSplit** that takes a stack of integers as a parameter and that splits each value into two halves, adding new values to the stack in a mirror position. For example, suppose that a stack s stores the following values:
+## 6. **Stacks/Queues Programming:** 
+Write a method called **mirrorSplit** that takes a stack of integers as a parameter and that splits each value into two halves, adding new values to the stack in a mirror position. For example, suppose that a stack s stores the following values:
 
     bottom [14, 20, 8, 12] top
 
