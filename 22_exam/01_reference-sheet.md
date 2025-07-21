@@ -128,3 +128,29 @@ Map<String, Integer> counts = new TreeMap<String, Integer>();
 | substring(i, j)               | Characters in this String from index i (inclusive) to j (exclusive)        |
 | toLowerCase(), toUpperCase()  | A new String with all lowercase or uppercase letters                       |
 
+**Object/Interface Syntax**
+
+*Example Class Implementation:*
+
+```java
+public class Example implements InterfaceExample {
+    private type field;
+
+    public Example() {
+        field = something;
+    }
+
+    public void method() {
+        // do something
+    }
+}
+```
+
+*Example Interface Definition:*
+
+```java
+public interface InterfaceExample {
+    public void method();
+}
+```
+
