@@ -112,7 +112,8 @@ public Hospital mystery(List<Hospital> list) {
 - (x) Calculates the Hospital in the list that has the highest Patient-Doctor Ratio
 - ( ) Calculates the Hospital in the list that has the lowest Patient-Doctor Ratio
 
-2. **Code Tracing:** Consider the method below.
+## 2. **Code Tracing:**
+Consider the method below.
 
     public static List<Integer> mystery(int[][] data) {
         List<Integer> result = new ArrayList<>();
