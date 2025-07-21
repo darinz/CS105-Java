@@ -88,18 +88,20 @@ __________________________________________________________
 
 **Part C:** (Select one option) Suppose we were to write the following method. Which of the options below would make the best summary for this new method of our Hospital.java class?
 
-    public Hospital mystery(List<Hospital> list) {
-        double a = 0.0;
-        Hospital b;
-        for (Hospital h : list) {
-            double c = h.patientDoctorRatio();
-            if (c >= a) {
-                a = c;
-                b = h;
-            }
+```java
+public Hospital mystery(List<Hospital> list) {
+    double a = 0.0;
+    Hospital b;
+    for (Hospital h : list) {
+        double c = h.patientDoctorRatio();
+        if (c >= a) {
+            a = c;
+            b = h;
         }
-        return b;
     }
+    return b;
+}
+```
 
 ( ) Updates each Hospital in the list to have a higher Patient-Doctor Ratio
 
@@ -113,15 +115,17 @@ __________________________________________________________
 ## 2. **Code Tracing:** 
 Consider the method below.
 
-    public static List<Integer> mystery(int[][] data) {
-        List<Integer> result = new ArrayList<>();
-        for (int i = 1; i < data.length; i++) {
-            for (int j = data[i].length - 1; j > 0; j--) {
-                result.add(data[i][j] - 1);
-            }
+```java
+public static List<Integer> mystery(int[][] data) {
+    List<Integer> result = new ArrayList<>();
+    for (int i = 1; i < data.length; i++) {
+        for (int j = data[i].length - 1; j > 0; j--) {
+            result.add(data[i][j] - 1);
         }
-        return result;
     }
+    return result;
+}
+```
 
 For each 2d array below, indicate in the right-hand column what values would be stored in the list returned by method mystery if the array in the left-hand column is passed as a parameter to mystery. List elements should be listed in proper order as a comma-separated bracketed list, as in [3, 18, 25].
 
@@ -156,19 +160,21 @@ Notice that 2 became -2 because it moved from the front to the back.
 
 A TA wrote a buggy implementation of this method shown below. HINT: There are **2** bugs.
 
-    1. public static void rotateLeftAndNegateEvens(List<Integer> list, int steps) {
-    2.     if (steps < 0 || list.length() == 0) {
-    3.         throw new IllegalArgumentException();
-    4.     }
-    5.     for (int i = 0; i < steps; i++) {
-    6.         int valFirst = list.remove(i);
-    7.         if (valFirst % 2 == 0) {
-    8.             list.add(valFirst * -1);
-    9.         } else {
-   10.             list.add(valFirst);
-   11.         }
-   12.     }
-   13. }
+```java
+1. public static void rotateLeftAndNegateEvens(List<Integer> list, int steps) {
+2.     if (steps < 0 || list.length() == 0) {
+3.         throw new IllegalArgumentException();
+4.     }
+5.     for (int i = 0; i < steps; i++) {
+6.         int valFirst = list.remove(i);
+7.         if (valFirst % 2 == 0) {
+8.             list.add(valFirst * -1);
+9.         } else {
+10.             list.add(valFirst);
+11.         }
+12.     }
+13. }
+```
 
 Your task is to fix this implementation so that it behaves as described above. If you are making significant changes to the structure of the method, it may be helpful to write your whole solution from scratch. However, if you are only making minor edits to the code that you can clearly explain, you can also write out just the edits below. If writing edits, specifically mention which line(s) you will change and write out the code you would replace them with. You will need to write correct code on the lines you change/add. If you are deleting some code, make sure it’s clear what parts are being removed. If you are inserting new code, make sure it is unambiguous where this new code belongs. Mention specific line number(s).
 
@@ -194,8 +200,6 @@ Notice that some instructors teach multiple courses and the same course may be t
 The set you return should be sorted alphabetically. You may assume that the given map and none of its contents are null.
 
 Your method should construct the new set to return but should otherwise not construct any new data structures. Your method should not modify the given Map. You should use interface types and generics appropriately.
-
-
 
 ## 5. **Objects Programming:** 
 Consider the following interface Restaurant. For this problem, you are to write a class called FastFoodRestaurant, which implements the Restaurant. The FastFoodRestaurant class should have two constructors. The first constructor should take a String name and the associated cuisine would be "N/A". The second constructor should take two parameters (String name and String cuisine).
