@@ -37,18 +37,27 @@ import java.util.HashMap;
 import java.util.TreeMap;
 
 // Using HashMap (no order guaranteed)
-Map<String, String> capitals = new HashMap<>();
-capitals.put("France", "Paris");
-capitals.put("Spain", "Madrid");
-capitals.put("Japan", "Tokyo");
+Map<String, String> capitals = new HashMap<>(); // Create a new HashMap to store country-capital pairs
+capitals.put("France", "Paris");   // Add a key-value pair: key is "France", value is "Paris"
+capitals.put("Spain", "Madrid");   // Add another pair
+capitals.put("Japan", "Tokyo");    // And another
 
-System.out.println(capitals.get("Spain")); // Output: Madrid
+System.out.println(capitals.get("Spain")); // Output: Madrid (get the value for key "Spain")
 
 // Using TreeMap (keys sorted alphabetically)
-Map<String, String> sortedCapitals = new TreeMap<>();
-sortedCapitals.putAll(capitals);
+Map<String, String> sortedCapitals = new TreeMap<>(); // Create a TreeMap (keys will be sorted)
+sortedCapitals.putAll(capitals); // Copy all entries from capitals
 System.out.println(sortedCapitals); // Output: {France=Paris, Japan=Tokyo, Spain=Madrid}
+// Notice the keys are sorted alphabetically
 ```
+
+**Explanation:**
+- `HashMap` is fast but does not guarantee any order of keys.
+- `TreeMap` keeps keys sorted (e.g., alphabetically for Strings).
+- `put(key, value)` adds or updates a mapping.
+- `get(key)` retrieves the value for a key (or null if not found).
+
+---
 
 ### Example: Mapping Favorite Artists to Songs
 
@@ -58,22 +67,29 @@ import java.util.TreeMap;
 
 public class FavoriteSongs {
     public static void main(String[] args) {
+        // Create a TreeMap to map artist names to their favorite songs
         Map<String, String> favArtistToSong = new TreeMap<>();
-        favArtistToSong.put("Stromae", "Ma Meilleure Ennemie");
+        favArtistToSong.put("Stromae", "Ma Meilleure Ennemie"); // Add artist-song pair
         favArtistToSong.put("Aitana", "Segundo Intento");
         favArtistToSong.put("Laufey", "Promise");
 
         // Getting a value for a key
-        String song = favArtistToSong.get("Aitana");
-        System.out.println("Aitana's song: " + song);
+        String song = favArtistToSong.get("Aitana"); // Retrieve the song for "Aitana"
+        System.out.println("Aitana's song: " + song); // Output: Aitana's song: Segundo Intento
 
         // Iterating over keys
-        for (String artist : favArtistToSong.keySet()) {
+        for (String artist : favArtistToSong.keySet()) { // Loop through all artists (keys)
+            // For each artist, print their favorite song
             System.out.println(artist + "'s favorite song: " + favArtistToSong.get(artist));
         }
     }
 }
 ```
+
+**Explanation:**
+- `TreeMap` sorts artists alphabetically.
+- `put` adds entries; `get` retrieves a value for a key.
+- `keySet()` returns all keys (artists), which you can loop over.
 
 ---
 
@@ -89,17 +105,22 @@ public class FavoriteSongs {
 ### Example: Checking and Removing
 
 ```java
-Map<String, Integer> scores = new HashMap<>();
-scores.put("Alice", 90);
-scores.put("Bob", 85);
+Map<String, Integer> scores = new HashMap<>(); // Create a map of names to scores
+scores.put("Alice", 90); // Add Alice's score
+scores.put("Bob", 85);   // Add Bob's score
 
-if (scores.containsKey("Alice")) {
-    System.out.println("Alice's score: " + scores.get("Alice"));
+if (scores.containsKey("Alice")) { // Check if Alice is in the map
+    System.out.println("Alice's score: " + scores.get("Alice")); // Print Alice's score
 }
 
-scores.remove("Bob"); // Removes Bob's entry
-System.out.println(scores);
+scores.remove("Bob"); // Removes Bob's entry from the map
+System.out.println(scores); // Output: {Alice=90}
 ```
+
+**Explanation:**
+- `containsKey(key)` checks if a key exists before accessing it.
+- `remove(key)` deletes a key-value pair.
+- Printing the map shows all current entries.
 
 ---
 
@@ -119,12 +140,17 @@ Map<String, Integer> hashMap = new HashMap<>();
 hashMap.put("b", 2);
 hashMap.put("a", 1);
 hashMap.put("c", 3);
-System.out.println("HashMap: " + hashMap); // Order not guaranteed
+System.out.println("HashMap: " + hashMap); // Order not guaranteed, e.g., {a=1, b=2, c=3} or any order
 
 Map<String, Integer> treeMap = new TreeMap<>();
-treeMap.putAll(hashMap);
+treeMap.putAll(hashMap); // Copy all entries from hashMap
 System.out.println("TreeMap: " + treeMap); // Keys sorted: {a=1, b=2, c=3}
 ```
+
+**Explanation:**
+- `HashMap` is generally faster but does not sort keys.
+- `TreeMap` sorts keys, which is useful if you need ordered output.
+- Both implement the `Map` interface, so you can switch between them easily.
 
 ---
 
@@ -135,10 +161,14 @@ System.out.println("TreeMap: " + treeMap); // Keys sorted: {a=1, b=2, c=3}
 - Prefer iterating with `entrySet()` for efficiency when you need both keys and values:
 
 ```java
-for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
-    System.out.println(entry.getKey() + ": " + entry.getValue());
+for (Map.Entry<String, Integer> entry : hashMap.entrySet()) { // entrySet() gives key-value pairs
+    System.out.println(entry.getKey() + ": " + entry.getValue()); // Print key and value
 }
 ```
+
+**Explanation:**
+- `entrySet()` is more efficient than calling `get()` inside a loop over `keySet()`.
+- Each `Map.Entry` object holds a key and its corresponding value.
 
 ---
 
