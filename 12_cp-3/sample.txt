@@ -1,0 +1,5 @@
+The quick brown fox jumps over the lazy dog.
+The quick brown fox is quick and clever!
+Dogs are not as quick as foxes, but they are loyal.
+A fox and a dog can be friends.
+How many times does the word 'quick' appear in this text? 
