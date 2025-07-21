@@ -141,3 +141,37 @@ ___________________________________________________________
  [5, 6]]                        [3, 2, 1, 5]
 ___________________________________________________________
 
+3. **Debugging:** Consider the following buggy implementation of **rotateLeftAndNegateEvens**. The intended behavior of this method is to take a list of integers and integer steps and modify that list so that the numbers are rotated left by the specified number of steps. Additionally, after the rotation, if the number is even and it moves from the front to the back, then it should be negated.
+
+For example, if a variable called list stores this sequence of values and `int steps = 2`:
+
+    [1, 2, 3, 4, 5, 6]
+
+We want to rotate the numbers within this list to the left by two steps. Additionally, we want to negate the even numbers that move from the front to the back. If the method gets is passed a negative value for steps or if the list is empty, then the method should throw an IllegalArgumentException(). So, our expected output is:
+
+    [3, 4, 5, 6, 1, -2]
+
+Notice that 2 became -2 because it moved from the front to the back.
+
+A TA wrote a buggy implementation of this method shown below. HINT: There are 2 bugs.
+
+    1. public static void rotateLeftAndNegateEvens(List<Integer> list, int steps) {
+    2.     if (steps < 0 || list.length() == 0) {
+    3.         throw new IllegalArgumentException();
+    4.     }
+    5.     for (int i = 0; i < steps; i++) {
+    6.         int valFirst = list.remove(i);
+    7.         if (valFirst % 2 == 0) {
+    8.             list.add(valFirst * -1);
+    9.         } else {
+   10.             list.add(valFirst);
+   11.         }
+   12.     }
+   13. }
+
+Your task is to fix this implementation so that it behaves as described above. If you are making significant changes to the structure of the method, it may be helpful to write your whole solution from scratch. However, if you are only making minor edits to the code that you can clearly explain, you can also write out just the edits below. If writing edits, specifically mention which line(s) you will change and write out the code you would replace them with. You will need to write correct code on the lines you change/add. If you are deleting some code, make sure it’s clear what parts are being removed. If you are inserting new code, make sure it is unambiguous where this new code belongs. Mention specific line number(s).
+
+```
+There are two bugs. Firstly, ArrayLists don’t have a method .length(). They have a method .size() instead (Line 2). Secondly, on Line 6, we don’t want to remove at index i, instead always from the start (index = 0).
+```
+
