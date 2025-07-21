@@ -96,91 +96,71 @@ The curriculum is organized around 17 specific learning objectives across seven 
 
 ## Learning Path
 
-### 1. [Software Setup](01_software-setup/)
-- Environment configuration and development tools setup
+1. [Software Setup](01_software-setup/README.md)  
+   Environment configuration and development tools setup
 
-### 2. [Introduction and Review](02_intro/)
-- Course overview and Java fundamentals review
-- Functional decomposition principles
-- Code quality standards
+2. [Introduction and Review](02_intro/README.md)  
+   Course overview, Java fundamentals, functional decomposition, code quality
 
-### 3. [Checkpoint 1](03_cp-1/)
-- Practice problems and review concepts
-- Functional decomposition, file I/O, and ArrayLists
+3. [Checkpoint 1](03_cp-1/README.md)  
+   Practice problems and review: functional decomposition, file I/O, ArrayLists
 
-### 4. [File Input/Output](04_file-io/)
-- Console and file I/O operations
-- Data persistence and retrieval
+4. [File Input/Output](04_file-io/README.md)  
+   Console and file I/O operations, data persistence and retrieval
 
-### 5. [Programming Assignment 1](05_pa-1/)
-- Comprehensive project applying file I/O concepts
+5. [Programming Assignment 1](05_pa-1/README.md)  
+   Comprehensive project applying file I/O concepts
 
-### 6. [ArrayLists](06_arraylists/)
-- Dynamic array implementation and applications
-- ArrayList operations and algorithms
+6. [ArrayLists](06_arraylists/README.md)  
+   Dynamic array implementation, ArrayList operations and algorithms
 
-### 7. [Quiz 1](07_quiz-1/)
-- Assessment covering foundational concepts
+7. [Quiz 1](07_quiz-1/README.md)  
+   Assessment covering foundational concepts
 
-### 8. [Checkpoint 2](08_cp-2/)
-- Practice problems and review concepts
-- Reference semantics, stacks, and queues
+8. [Checkpoint 2](08_cp-2/README.md)  
+   Practice problems and review: reference semantics, stacks, queues
 
-### 9. [Reference Semantics, Stacks & Queues](09_semantics-stacks-queues/)
-- Reference semantics and memory management
-- Stack and queue data structures
-- Applications and implementations
+9. [Reference Semantics, Stacks & Queues](09_semantics-stacks-queues/README.md)  
+   Reference semantics, memory management, stack and queue data structures
 
-### 10. [Programming Assignment 2](10_pa-2/)
-- Project incorporating stacks, queues, and reference semantics
+10. [Programming Assignment 2](10_pa-2/README.md)  
+    Project incorporating stacks, queues, and reference semantics
 
-### 11. [Sets and Maps](11_sets-maps/)
-- Set data structures and for-each loops
-- Map implementations and applications
-- Iterators and collection traversal
+11. [Sets and Maps](11_sets-maps/README.md)  
+    Set data structures, for-each loops, map implementations, iterators
 
-### 12. [Checkpoint 3](12_cp-3/)
-- Practice problems and review concepts
-- Sets, maps, and nested collections
+12. [Checkpoint 3](12_cp-3/README.md)  
+    Practice problems and review: sets, maps, nested collections
 
-### 13. [Collections and Objects](13_nested-collections/)
-- Nested collections and complex data structures
+13. [Collections and Objects](13_nested-collections/README.md)  
+    Nested collections and complex data structures
 
-### 14. [Programming Assignment 3](14_pa-3/)
-- Project focusing on collections and object design
+14. [Programming Assignment 3](14_pa-3/README.md)  
+    Project focusing on collections and object design
 
-### 15. [Quiz 2](15_quiz-2/)
-- Assessment covering intermediate concepts
+15. [Quiz 2](15_quiz-2/README.md)  
+    Assessment covering intermediate concepts
 
-### 16. [Object-Oriented Programming](16_oop/)
-- Introduction to object-oriented programming
-- Class design and encapsulation
-- Encapsulation and instance methods
-- Advanced OOP principles
-- Class relationships and inheritance
+16. [Object-Oriented Programming](16_oop/README.md)  
+    OOP introduction, class design, encapsulation, instance methods, inheritance
 
-### 17. [Checkpoint 4](17_cp-4/)
-- Practice problems and review concepts
-- Nested collections, objects, and interfaces
+17. [Checkpoint 4](17_cp-4/README.md)  
+    Practice problems and review: nested collections, objects, interfaces
 
-### 18. [Interfaces and Beyond](18_interfaces-beyond/)
-- Interface design and implementation
-- Java Collections Framework
-- Advanced programming abstractions
+18. [Interfaces and Beyond](18_interfaces-beyond/README.md)  
+    Interface design, Java Collections Framework, advanced abstractions
 
-### 19. [Programming Assignment 4](19_pa-4/)
-- Final comprehensive project
+19. [Programming Assignment 4](19_pa-4/README.md)  
+    Final comprehensive project
 
-### 20. [Quiz 3](20_quiz-3/)
-- Assessment covering advanced concepts
+20. [Quiz 3](20_quiz-3/README.md)  
+    Assessment covering advanced concepts
 
-### 21. [Testing and Libraries](21_testing-libraries/)
-- JUnit testing framework
-- Third-party libraries and tools
-- Testing strategies and best practices
+21. [Testing and Libraries](21_testing-libraries/README.md)  
+    JUnit testing, third-party libraries, testing strategies
 
-### 22. [Final Exam](22_exam/)
-- Comprehensive assessment of all course concepts
+22. [Final Exam](22_exam/README.md)  
+    Comprehensive assessment of all course concepts
 
 ## Assessment and Evaluation
 
