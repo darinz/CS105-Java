@@ -242,7 +242,8 @@ Then the following method calls would return…
 Your RelayTeam class should implement the Team interface. Your RelayTeam class should have private fields and you should use interface types and generics appropriately.
 
 
-6. **Stacks/Queues Programming:** Write a method called **alphabetize** that takes a queue of Strings as a parameter and modifies the queue to sort the Strings based on their first letter. We will assume that all Strings in the queue begin with either 'a', 'b', or 'c'. For example, suppose a queue called q stores the following sequence of values:
+## 6. **Stacks/Queues Programming:**
+Write a method called **alphabetize** that takes a queue of Strings as a parameter and modifies the queue to sort the Strings based on their first letter. We will assume that all Strings in the queue begin with either 'a', 'b', or 'c'. For example, suppose a queue called q stores the following sequence of values:
 
     front ["august", "cornelia street", "bejeweled", "cardigan", "afterglow"] back
 
