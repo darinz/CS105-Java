@@ -27,17 +27,22 @@
 
 **Creating an object:**
 ```java
+// Scanner is a built-in Java class for reading input
 Scanner console = new Scanner(System.in); // Scanner is the class, console is the object
+// 'new' creates a new Scanner object that reads from System.in (the keyboard)
 ```
 
 **Custom Example:**
 ```java
+// Define a class named Dog
 public class Dog {
     // This class is a blueprint for Dog objects
 }
 
+// Create an object (instance) of the Dog class
 Dog myDog = new Dog(); // myDog is an object (instance) of the Dog class
 ```
+*Tip: The class defines what a Dog is, but myDog is an actual Dog you can interact with in your program.*
 
 ---
 
@@ -52,22 +57,27 @@ Objects tie related state and behavior together.
 
 **Example:**
 ```java
+// Define a Dog class with state and behavior
 public class Dog {
-    // State (fields)
+    // State (fields): Each Dog has its own name, age, and breed
     String name;
     int age;
     String breed;
 
-    // Behavior (methods)
+    // Behavior (method): Each Dog can bark
     public void bark() {
+        // Print a message showing which dog is barking
         System.out.println(name + " says: Woof!");
     }
 }
 
+// Create a Dog object and set its state
 Dog fido = new Dog();
-fido.name = "Fido";
-fido.age = 3;
-fido.breed = "Labrador";
+fido.name = "Fido";      // Set the dog's name
+fido.age = 3;             // Set the dog's age
+fido.breed = "Labrador"; // Set the dog's breed
+
+// Call the bark method (behavior) on the Dog object
 fido.bark(); // Output: Fido says: Woof!
 ```
 *Note: Each Dog object has its own name, age, and breed (state), and can bark (behavior).*
@@ -76,14 +86,15 @@ fido.bark(); // Output: Fido says: Woof!
 
 ## Syntax
 
+Below is the general structure of a Java class with fields and methods:
 ```java
 public class MyObject {
-    // fields (or instance variables)
+    // fields (or instance variables) - store the state of the object
     type1 fieldName1;
     type2 fieldName2;
     // ...
     
-    // instance methods
+    // instance methods - define the behavior of the object
     public returnType methodName(...) {
         // ...
     }
@@ -92,15 +103,24 @@ public class MyObject {
 
 **Example:**
 ```java
+// Define a Car class
 public class Car {
-    String color;
-    int year;
+    String color; // State: color of the car
+    int year;     // State: year the car was made
 
+    // Behavior: drive the car
     public void drive() {
         System.out.println("The " + color + " car is driving.");
     }
 }
+
+// Create a Car object and use it
+Car myCar = new Car();
+myCar.color = "red";
+myCar.year = 2020;
+myCar.drive(); // Output: The red car is driving.
 ```
+*Tip: Each Car object can have a different color and year, but all can drive!*
 
 ---
 
@@ -118,6 +138,7 @@ public class Student {
     int id;      // Each Student has their own id
 }
 
+// Create two Student objects
 Student alice = new Student();
 alice.name = "Alice";
 alice.id = 101;
@@ -125,7 +146,9 @@ alice.id = 101;
 Student bob = new Student();
 bob.name = "Bob";
 bob.id = 102;
+// alice and bob are separate objects with their own state
 ```
+*Tip: Changing alice's name does not affect bob's name!*
 
 ---
 
@@ -138,22 +161,24 @@ bob.id = 102;
 **Example:**
 ```java
 public class Counter {
-    int count = 0; // instance variable
+    int count = 0; // instance variable, each Counter has its own count
 
+    // Method to increase the count by 1
     public void increment() {
         count++; // increases this object's count
     }
 
+    // Method to get the current count
     public int getCount() {
         return count;
     }
 }
 
-Counter c1 = new Counter();
-Counter c2 = new Counter();
-c1.increment();
-c1.increment();
-c2.increment();
+Counter c1 = new Counter(); // First counter
+Counter c2 = new Counter(); // Second counter
+c1.increment(); // c1's count is now 1
+c1.increment(); // c1's count is now 2
+c2.increment(); // c2's count is now 1
 System.out.println(c1.getCount()); // 2
 System.out.println(c2.getCount()); // 1
 ```
@@ -166,6 +191,8 @@ System.out.println(c2.getCount()); // 1
 - Instance variables are unique to each object; changing one object's state does not affect another's.
 - Methods that do not use `static` are instance methods and can access instance variables.
 - Use meaningful names for classes, fields, and methods to make your code readable.
+- If you forget to initialize an object's fields, they will have default values (e.g., 0 for int, null for objects).
+- Remember to use the dot (`.`) operator to access fields and methods: `object.field` or `object.method()`.
 
 ---
 
