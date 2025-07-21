@@ -299,4 +299,4 @@ public class Person {
 
 ---
 
-If you work through these explanations and problems, you’ll have a strong foundation in Java OOP. Practice writing your own classes and methods, and always think about encapsulation, immutability, and clear design! 
+If you work through these explanations and problems, you’ll have a strong foundation in Java OOP. Practice writing your own classes and methods, and always think about encapsulation, immutability, and clear design!
