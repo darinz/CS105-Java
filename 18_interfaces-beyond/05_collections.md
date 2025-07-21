@@ -202,4 +202,3 @@ Collections.sort(students); // Sorts by grade
 - **Comparable** allows custom sorting.
 
 Java Collections Framework is powerful and flexible. Choose the right collection based on your needs for performance, ordering, and uniqueness.
-
