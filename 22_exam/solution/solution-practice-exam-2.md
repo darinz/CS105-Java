@@ -110,3 +110,34 @@ public Hospital mystery(List<Hospital> list) {
 - (x) Calculates the Hospital in the list that has the highest Patient-Doctor Ratio
 - ( ) Calculates the Hospital in the list that has the lowest Patient-Doctor Ratio
 
+2. **Code Tracing:** Consider the method below.
+
+    public static List<Integer> mystery(int[][] data) {
+        List<Integer> result = new ArrayList<>();
+        for (int i = 1; i < data.length; i++) {
+            for (int j = data[i].length - 1; j > 0; j--) {
+                result.add(data[i][j] - 1);
+            }
+        }
+        return result;
+    }
+
+For each 2d array below, indicate in the right-hand column what values would be stored in the list returned by method mystery if the array in the left-hand column is passed as a parameter to mystery. List elements should be listed in proper order as a comma-separated bracketed list, as in [3, 18, 25].
+
+**Input 2D Array**                     **Contents of List Returned**
+
+[[0, 1],
+ [2, 3]]                        [2]
+___________________________________________________________
+
+[[0, 1, 2],
+ [3, 4, 5],
+ [6, 7, 8]]                     [4, 3, 7, 6]
+___________________________________________________________
+
+[[3, 4],
+ [1, 2, 3, 4],
+ [],
+ [5, 6]]                        [3, 2, 1, 5]
+___________________________________________________________
+
