@@ -11,7 +11,8 @@ The exam is divided into six questions with the following points:
     5     Objects Programming
     6     Stacks/Queues Programming
 
-1. **Conceptual:** Each of these parts uses the Hospital.java implementation included here.
+## 1. **Conceptual:**
+Each of these parts uses the Hospital.java implementation included here.
 
 ```java
 public class Hospital {
@@ -109,7 +110,8 @@ __________________________________________________________
 ( ) Calculates the Hospital in the list that has the lowest Patient-Doctor Ratio
 
 
-2. **Code Tracing:** Consider the method below.
+## 2. **Code Tracing:** 
+Consider the method below.
 
     public static List<Integer> mystery(int[][] data) {
         List<Integer> result = new ArrayList<>();
