@@ -76,3 +76,66 @@ System.out.println(h3);
 
 **Part A1:** How many Hospital objects are created in this snippet? Answer in box below
 
+
+**Part A2:** How many **references to objects** are created in this snippet?
+Answer in box below
+
+__________________________________________________________
+
+**Part B:** What is printed to the console by the code snippet from Part A?
+
+__________________________________________________________
+
+**Part C:** (Select one option) Suppose we were to write the following method. Which of the options below would make the best summary for this new method of our Hospital.java class?
+
+    public Hospital mystery(List<Hospital> list) {
+        double a = 0.0;
+        Hospital b;
+        for (Hospital h : list) {
+            double c = h.patientDoctorRatio();
+            if (c >= a) {
+                a = c;
+                b = h;
+            }
+        }
+        return b;
+    }
+
+( ) Updates each Hospital in the list to have a higher Patient-Doctor Ratio
+
+( ) Checks and returns the Hospital that is tied for the same Patient-Doctor Ratio
+
+( ) Calculates the Hospital in the list that has the highest Patient-Doctor Ratio
+
+( ) Calculates the Hospital in the list that has the lowest Patient-Doctor Ratio
+
+
+2. **Code Tracing:** Consider the method below.
+
+    public static List<Integer> mystery(int[][] data) {
+        List<Integer> result = new ArrayList<>();
+        for (int i = 1; i < data.length; i++) {
+            for (int j = data[i].length - 1; j > 0; j--) {
+                result.add(data[i][j] - 1);
+            }
+        }
+        return result;
+    }
+
+For each 2d array below, indicate in the right-hand column what values would be stored in the list returned by method mystery if the array in the left-hand column is passed as a parameter to mystery. List elements should be listed in proper order as a comma-separated bracketed list, as in [3, 18, 25].
+
+**Input 2D Array** | **Contents of List Returned**
+-------------------|------------------------------
+
+[[0, 1],
+ [2, 3]]           | ____________________________________________
+
+[[0, 1, 2],
+ [3, 4, 5],
+ [6, 7, 8]]        | ____________________________________________
+
+[[3, 4],
+ [1, 2, 3, 4],
+ [],
+ [5, 6]]           | ____________________________________________
+
