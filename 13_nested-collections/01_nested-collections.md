@@ -97,10 +97,58 @@ System.out.println("Nathan's grade: " + nathanGrade);
 ---
 
 ## Practice
-Try creating a `Map<String, List<String>>` to represent a library where each genre maps to a list of book titles. Add some genres and books, then print out all books in a given genre.
 
----
+Let's walk through a complete, annotated example for the practice problem:
 
-*Annotated and explained for clarity. See comments in code for details.*
+### Problem
+Create a `Map<String, List<String>>` to represent a library where each genre maps to a list of book titles. Add some genres and books, then print out all books in a given genre.
 
+### Annotated Java Example
 
+```java
+import java.util.*;
+
+public class LibraryExample {
+    public static void main(String[] args) {
+        // Create a Map where the key is the genre (e.g., "Fantasy"),
+        // and the value is a List of book titles in that genre.
+        Map<String, List<String>> library = new HashMap<>();
+
+        // Add some genres with empty lists
+        library.put("Fantasy", new ArrayList<>()); // "Fantasy" genre with no books yet
+        library.put("Science Fiction", new ArrayList<>()); // "Science Fiction" genre
+        library.put("Mystery", new ArrayList<>()); // "Mystery" genre
+
+        // Add books to the genres
+        library.get("Fantasy").add("The Hobbit");
+        library.get("Fantasy").add("Harry Potter and the Sorcerer's Stone");
+        library.get("Science Fiction").add("Dune");
+        library.get("Science Fiction").add("Ender's Game");
+        library.get("Mystery").add("The Hound of the Baskervilles");
+
+        // Print all books in a given genre
+        String genreToPrint = "Fantasy";
+        System.out.println("Books in the genre '" + genreToPrint + "':");
+        for (String book : library.get(genreToPrint)) {
+            System.out.println("- " + book);
+        }
+
+        // Print all genres and their books
+        System.out.println("\nAll genres and their books:");
+        for (String genre : library.keySet()) {
+            System.out.println(genre + ": " + library.get(genre));
+        }
+    }
+}
+```
+
+#### Explanation
+- **Map<String, List<String>> library**: The key is the genre name, and the value is a list of book titles.
+- **library.put("Fantasy", new ArrayList<>())**: Adds a new genre with an empty list of books.
+- **library.get("Fantasy").add("The Hobbit")**: Adds a book to the list for the "Fantasy" genre.
+- **Printing books**: You can loop through the list for a genre, or print all genres and their books.
+
+#### Key Concepts
+- The value in the map is a reference to a list, so you can add books directly to it.
+- Always make sure the genre exists in the map before calling `get()`.
+- This pattern is useful for grouping items by category.
