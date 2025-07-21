@@ -11,7 +11,8 @@ The exam is divided into six questions with the following points:
     5    Objects Programming
     6    Stacks/Queues Programming
 
-1. **Conceptual:** Each of these parts uses the Hospital.java implementation included here.
+## 1. **Conceptual:** 
+Each of these parts uses the Hospital.java implementation included here.
 
 ```java
 public class Hospital {
