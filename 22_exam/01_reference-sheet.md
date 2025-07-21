@@ -69,3 +69,62 @@ Map<String, Integer> counts = new TreeMap<String, Integer>();
 | remove(index)         | Removes/returns value at given index, shifting subsequent values left |
 | set(index, value)     | Replaces value at given index with given value                   |
 
+**Iterator<Type> Methods**
+
+| Method      | Description                                                                 |
+|-------------|-----------------------------------------------------------------------------|
+| hasNext()   | Returns true if there is another element in the iterator                    |
+| next()      | Returns the next value in the iterator and progresses the iterator forward one element |
+| remove()    | Removes the previous value returned by the next. Can only call once after each call to next() |
+
+**Stack<Type> Methods (only allowed methods plus size and isEmpty)**
+
+| Method         | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| pop()         | Removes and returns the top value from the stack; throws an Exception if empty |
+| push(value)   | Places the given value on top of the stack                                 |
+| peek()        | Returns the top from the stack; throws an Exception if the stack is empty   |
+
+**Queue<Type> Methods (only allowed methods plus size and isEmpty)**
+
+| Method         | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| add(value)    | Places the given value at the back of the queue                            |
+| remove()      | Removes and returns the value from the front of the queue; throws an Exception if empty |
+| peek()        | Returns the value at the front of the queue; throws an Exception if the queue is empty |
+
+**Map<KeyType, ValueType> Methods**
+
+| Method                | Description                                                                 |
+|-----------------------|-----------------------------------------------------------------------------|
+| containsKey(key)      | true if the map contains a mapping for the given key                        |
+| get(key)              | The value mapped to the given key (null if none)                            |
+| keySet()              | Returns a Set of all keys in the map                                        |
+| put(key, value)       | Adds a mapping from the given key to the given value                        |
+| putAll(map)           | Adds all key/value pairs from the given map to this map                     |
+| remove(key)           | Removes any existing mapping for the given key                              |
+| toString()            | Returns a string such as "{a=90, d=60, c=70}"                              |
+| values()              | Returns a Collection of all values in the map                               |
+
+**Math Methods**
+
+| Method                | Description                                                                 |
+|-----------------------|-----------------------------------------------------------------------------|
+| abs(x)                | Returns the absolute value of x                                             |
+| max(x, y) / min(x, y) | Returns the larger / smaller of x and y                                     |
+| pow(x, y)             | Returns the value of x to the y power                                       |
+| round(x)              | Returns x rounded to the nearest integer                                    |
+
+**String Methods**
+
+| Method                        | Description                                                                 |
+|-------------------------------|-----------------------------------------------------------------------------|
+| charAt(i)                     | The character in this String at a given index                              |
+| contains(str)                 | true if this String contains the other's characters inside it              |
+| equals(str)                   | true if this String is the same as str                                     |
+| equalsIgnoreCase(str)         | true if this String is the same as str, ignoring capitalization            |
+| indexOf(str)                  | First index in this String where given String begins (-1 if not found)     |
+| length()                      | Number of characters in this String                                        |
+| substring(i, j)               | Characters in this String from index i (inclusive) to j (exclusive)        |
+| toLowerCase(), toUpperCase()  | A new String with all lowercase or uppercase letters                       |
+
