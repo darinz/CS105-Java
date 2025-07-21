@@ -1,3 +1,5 @@
+# Practice Exam 1
+
 The exam is divided into six questions with the following points:
 
     #     Problem Area
@@ -9,7 +11,8 @@ The exam is divided into six questions with the following points:
     5     Objects Programming
     6     Stacks/Queues Programming
 
-1. **Conceptual**: Each of these parts should be considered independent of the others.
+## 1. **Conceptual**:
+Each of these parts should be considered independent of the others.
 
 **Part A:** (Select all that apply) Which of the following are true about Sets?
 
@@ -87,7 +90,8 @@ public static Set<Integer> mystery2(Map<Integer, Set<Integer>> m) {
 - ( ) Uses a for-each loop to look at each key from m to sum the numbers in the inner sets, adding the key to a set if the sum equals the associated key
 
 
-2. **Code Tracing:** Consider the method below.
+## 2. **Code Tracing:** 
+Consider the method below.
 
 ```java
 public static Set<Integer> superSecretMystery(int[][] arr) {
@@ -114,7 +118,8 @@ For each 2d array below, indicate the contents of the Set that superSecretMyster
 | [[5, -5, 8, 0, 6]]   | ___________________________________ |
 
 
-3. **Debugging.** Consider the following buggy implementation of **removeEvensInRange**. The intended behavior of this method is to take a list of integers, as well as integers start and end, and modify that list so that it removes the even numbers between indices start and end (both exclusive), and return the number of elements that were removed.
+## 3. **Debugging.**
+Consider the following buggy implementation of **removeEvensInRange**. The intended behavior of this method is to take a list of integers, as well as integers start and end, and modify that list so that it removes the even numbers between indices start and end (both exclusive), and return the number of elements that were removed.
 
 For example, if a variable called list stores this sequence of values:
 
@@ -151,7 +156,8 @@ A TA wrote a buggy implementation of this method shown below.
 **Part B:** Fix the error in the method above. Since there is only one bug, this should not take a lot of code to fix. Specifically mention which line(s) you will change and how. If you are deleting some code, make sure it’s clear what parts are being removed. If you are inserting new code, make sure it is unambiguous where this new code belongs. Mention specific line number(s). Write your answer for **Part B** in the box below.
 
 
-4. **Collections Programming:** Write a method called **mostPopularHobby** that takes in a Map with keys that are TA names and values that are sets of hobbies of that TA. For example, if a variable called m contains the following:
+## 4. **Collections Programming:**
+Write a method called **mostPopularHobby** that takes in a Map with keys that are TA names and values that are sets of hobbies of that TA. For example, if a variable called m contains the following:
 
     {
       Atharva = [board games, comedy shows, hiking, video gaming],
@@ -233,4 +239,46 @@ Then the following method calls would return…
     team2.toString();             // Turtles’s average time: 50.0 s
 
 Your RelayTeam class should implement the Team interface. Your RelayTeam class should have private fields and you should use interface types and generics appropriately.
+
+
+6. **Stacks/Queues Programming:** Write a method called **alphabetize** that takes a queue of Strings as a parameter and modifies the queue to sort the Strings based on their first letter. We will assume that all Strings in the queue begin with either 'a', 'b', or 'c'. For example, suppose a queue called q stores the following sequence of values:
+
+    front ["august", "cornelia street", "bejeweled", "cardigan", "afterglow"] back
+
+and we make the following call:
+
+    alphabetize(q);
+
+Then q should store the following values after the call:
+
+    front ["august", "afterglow", "bejeweled", "cornelia street", "cardigan"] back
+
+Notice that the Strings that start with 'a' are at the front, followed by the Strings that start with 'b', followed by the Strings that start with 'c'.
+
+Also, notice that the queue is **not** fully alphabetized, rather, the ordering within a letter group is maintained. For example, "august" is **before** "afterglow" in both the original queue and the modified queue.
+
+If the input queue is empty, then calling this method should not modify it.
+
+For an E, your solution must obey the following restrictions. A solution that disobeys them may get an S, but it is not guaranteed.
+
+  * You may use _one stack_ as auxiliary storage. You may not use other structures (arrays, lists, etc.), but you can have as many simple variables as you like.
+  * Use the Queue interface and Stack/LinkedList classes discussed in class.
+  * Use stacks/queues in stack/queue-like ways only. Do _not_ use index-based methods such as get, search, or set, or for-each loops or iterators. You may call add, remove, push, pop, peek, isEmpty, and size.
+  * Do not use advanced material such as recursion to solve the problem.
+
+You have access to the following two methods and may call them as needed to help you solve the problem:
+
+```java
+public static void s2q(Stack<String> s, Queue<String> q) {
+    while (!s.isEmpty()) {
+        q.add(s.pop());
+    }
+}
+
+public static void q2s(Queue<String> q, Stack<String> s) {
+    while (!q.isEmpty()) {
+        s.push(q.remove());
+    }
+}
+```
 
