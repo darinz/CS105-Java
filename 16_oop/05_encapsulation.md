@@ -44,10 +44,12 @@ The `private` keyword is an **access modifier** (like `public`).
 ```java
 public class Point {
     // These fields are private: only accessible inside the Point class
-    private int x;
-    private int y;
+    private int x; // x coordinate of the point
+    private int y; // y coordinate of the point
 }
 ```
+**Explanation:**
+- `private int x;` and `private int y;` mean that only code inside the `Point` class can access or change these variables. Code outside the class cannot directly see or modify them. This protects the data from accidental or unwanted changes.
 
 If you try to access `x` or `y` from outside the class, you will get a compiler error!
 
@@ -62,36 +64,45 @@ Declaring fields as `private` removes all access from the user. If we want to gi
 ### Example: Accessors and Mutators
 ```java
 public class Point {
-    private int x;
-    private int y;
+    private int x; // x coordinate (hidden from outside)
+    private int y; // y coordinate (hidden from outside)
 
     // Accessor (getter) for x
     public int getX() {
+        // Returns the value of x
         return x;
     }
 
     // Mutator (setter) for x
     public void setX(int newX) {
+        // Sets the value of x to newX
         x = newX;
     }
 
     // Accessor (getter) for y
     public int getY() {
+        // Returns the value of y
         return y;
     }
 
     // Mutator (setter) for y
     public void setY(int newY) {
+        // Sets the value of y to newY
         y = newY;
     }
 
-    // Mutator to set both x and y
+    // Mutator to set both x and y at once
     public void setLocation(int newX, int newY) {
+        // Sets both x and y to new values
         x = newX;
         y = newY;
     }
 }
 ```
+**Explanation:**
+- `getX()` and `getY()` allow code outside the class to read the values of `x` and `y`.
+- `setX(int newX)` and `setY(int newY)` allow code outside the class to change the values of `x` and `y`.
+- The actual fields `x` and `y` are still private, so you control exactly how they are accessed or changed.
 
 ---
 
@@ -103,6 +114,7 @@ While users can still access and modify our Point’s fields with the instance m
 
 ```java
 public void setX(int newX) {
+    // Only allow non-negative values for x
     if (newX >= 0) {
         x = newX;
     } else {
@@ -110,8 +122,10 @@ public void setX(int newX) {
     }
 }
 ```
+**Explanation:**
+- This setter checks if the new value is valid before changing `x`. If not, it prints a warning and does not change the value. This keeps the object in a valid state.
 
-- We can change our internal implementation (e.g., use polar coordinates instead of x/y) without changing the public interface.
+- We can change our internal implementation (e.g., use polar coordinates instead of x/y) without changing the public interface. This means code using our class does not need to change, even if we change how we store the data inside.
 
 ---
 
@@ -119,4 +133,5 @@ public void setX(int newX) {
 - Encapsulation is about hiding details and exposing only what is necessary.
 - Use `private` fields and provide public accessors/mutators to control access.
 - This makes your code safer, more flexible, and easier to maintain.
+- Adding comments and explanations to your code helps others (and your future self) understand how and why it works!
 
