@@ -287,6 +287,7 @@ Your FastFoodRestaurant class should implement the Restaurant Interface. Your Fa
 
 **Solution:**
 
+```java
 import java.util.*;
 
 public class FastFoodRestaurant implements Restaurant {
@@ -342,6 +343,7 @@ public class FastFoodRestaurant implements Restaurant {
         return "No reservation needed!";
     }
 }
+```
 
 6. **Stacks/Queues Programming:** Write a method called mirrorSplit that takes a stack of integers as a parameter and that splits each value into two halves, adding new values to the stack in a mirror position. For example, suppose that a stack s stores the following values:
 
