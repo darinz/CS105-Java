@@ -345,7 +345,8 @@ public class FastFoodRestaurant implements Restaurant {
 }
 ```
 
-6. **Stacks/Queues Programming:** Write a method called mirrorSplit that takes a stack of integers as a parameter and that splits each value into two halves, adding new values to the stack in a mirror position. For example, suppose that a stack s stores the following values:
+## 6. **Stacks/Queues Programming:**
+Write a method called mirrorSplit that takes a stack of integers as a parameter and that splits each value into two halves, adding new values to the stack in a mirror position. For example, suppose that a stack s stores the following values:
 
     bottom [14, 20, 8, 12] top
 
