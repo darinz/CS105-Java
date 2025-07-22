@@ -414,4 +414,3 @@ public static void mirrorSplit(Stack<Integer> s) {
     q2s(q, s);
 }
 ```
-
