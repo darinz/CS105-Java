@@ -219,8 +219,10 @@ public static Set<String> studentsTaught(
 }
 ```
 
-5. **Objects Programming:** Consider the following interface Restaurant. For this problem, you are to write a class called FastFoodRestaurant, which implements the Restaurant. The FastFoodRestaurant class should have two constructors. The first constructor should take a String name and the associated cuisine would be “N/A”. The second constructor should take two parameters (String name and String cuisine).
+## 5. **Objects Programming:** 
+Consider the following interface Restaurant. For this problem, you are to write a class called FastFoodRestaurant, which implements the Restaurant. The FastFoodRestaurant class should have two constructors. The first constructor should take a String name and the associated cuisine would be “N/A”. The second constructor should take two parameters (String name and String cuisine).
 
+```java
 public interface Restaurant {
     // Returns the name of the Restaurant
     public String getName();
@@ -251,6 +253,7 @@ public interface Restaurant {
     // otherwise false
     public boolean hasMoreOptions(Restaurant other);
 }
+```
 
 For example, if the following lines were executed using the FastFoodRestaurant class...
     Restaurant r1 = new FastFoodRestaurant("McDonalds");
