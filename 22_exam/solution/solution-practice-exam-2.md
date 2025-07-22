@@ -383,17 +383,19 @@ For an E, your solution must obey the following restrictions. A solution that di
 
 You have access to the following two methods and may call them as needed to help you solve the problem:
 
-    public static void s2q(Stack<Integer> s, Queue<Integer> q) {
-        while (!s.isEmpty()) {
-            q.add(s.pop());
-        }
+```java
+public static void s2q(Stack<Integer> s, Queue<Integer> q) {
+    while (!s.isEmpty()) {
+        q.add(s.pop());
     }
+}
 
-    public static void q2s(Queue<Integer> q, Stack<Integer> s) {
-        while (!q.isEmpty()) {
-            s.push(q.remove());
-        }
+public static void q2s(Queue<Integer> q, Stack<Integer> s) {
+    while (!q.isEmpty()) {
+        s.push(q.remove());
     }
+}
+```
 
 ```java
 public static void mirrorSplit(Stack<Integer> s) {
