@@ -144,7 +144,8 @@ ___________________________________________________________
  [5, 6]]                        [3, 2, 1, 5]
 ___________________________________________________________
 
-3. **Debugging:** Consider the following buggy implementation of **rotateLeftAndNegateEvens**. The intended behavior of this method is to take a list of integers and integer steps and modify that list so that the numbers are rotated left by the specified number of steps. Additionally, after the rotation, if the number is even and it moves from the front to the back, then it should be negated.
+## 3. **Debugging:** 
+Consider the following buggy implementation of **rotateLeftAndNegateEvens**. The intended behavior of this method is to take a list of integers and integer steps and modify that list so that the numbers are rotated left by the specified number of steps. Additionally, after the rotation, if the number is even and it moves from the front to the back, then it should be negated.
 
 For example, if a variable called list stores this sequence of values and `int steps = 2`:
 
@@ -178,7 +179,8 @@ Your task is to fix this implementation so that it behaves as described above. I
 There are two bugs. Firstly, ArrayLists don’t have a method .length(). They have a method .size() instead (Line 2). Secondly, on Line 6, we don’t want to remove at index i, instead always from the start (index = 0).
 ```
 
-4. **Collections Programming:** Write a method called **studentsTaught** that takes a map indicating each student’s enrollment history and an instructor’s name and returns a set indicating all students that the given instructor has taught.
+## 4. **Collections Programming:**
+ Write a method called **studentsTaught** that takes a map indicating each student’s enrollment history and an instructor’s name and returns a set indicating all students that the given instructor has taught.
 
 The input map will have keys that are names of students (strings) and corresponding values which are maps representing the classes the student has taken. The value map maps the course code (integers) to the name of the instructor (strings) they took the class with. For example, if a variable called m stored the following map in the format described above:
 
